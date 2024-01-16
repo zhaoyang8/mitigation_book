@@ -3,8 +3,9 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
-- file: mymarkdownfile
+parts:
+  - caption: Model
+    chapters:
+    - file: models/MPC
+    - file: models/HMC
+
