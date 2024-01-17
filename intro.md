@@ -1,11 +1,10 @@
-# Welcome to your Jupyter Book
+# Introduction
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+This website provides a series of online texts for *Carbon prices and forest preservation over space and time in the Brazilian Amazon* by Juliano J Assunção, Lars Peter Hansen, Todd Munson and José A Scheinkman.
 
-Check out the content pages bundled with this sample book to see more.
 
-```{tableofcontents}
-```
+# Table of contents
+1. [Introduction](intro.md)
+2. [Model](models/)
+    1. [Uncertainty in agricultural price](models/MPC.ipynb)
+    2. [Uncertainty in parameters](models/HMC.ipynb)
