@@ -3,9 +3,13 @@
 
 format: jb-book
 root: intro
-parts:
-  - caption: Model
-    chapters:
-    - file: models/MPC
-    - file: models/HMC
-
+# parts:
+#   - caption: Model
+#     chapters:
+#     - file: models/MPC
+#     - file: models/HMC
+chapters:
+- file: calibration/calibration.ipynb
+- file: models/Deterministic.ipynb
+- file: models/HMC
+- file: models/MPC
