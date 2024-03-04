@@ -1,9 +1,9 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: My sample book
-author: The Jupyter Book Community
-logo: logo.png
+title: Amazon project
+author: Juliano J Assunção, Lars Peter Hansen, Todd Munson and José A Scheinkman
+logo: mfr.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -21,7 +21,7 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
+  url: https://github.com/lphansen/Amazon/tree/gh-pages  # Online location of your book
   path_to_book: docs  # Optional path to your book, relative to the repository root
   branch: master  # Which branch of the repository should be used when creating links (optional)
 
@@ -30,3 +30,25 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  extra_css: ["_static/custom.css"]
+
+
+sphinx:
+  config:
+    # html_theme : 'piccolo_theme'
+    html_theme_options: 
+              "show_nav_level": 0 
+    # mathjax_macros: book/latexdefs.tex
+      # include: 
+  # nb_custom_formats:
+  #       .sty:
+  #           - jupytext.reads
+  #           - fmt: sty
+  extra_extensions:
+  - sphinx_external_toc
+
+# parse:
+#   myst_enable_extensions:
+#     - amsmath
+
+only_build_toc_files: true
