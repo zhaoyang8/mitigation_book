@@ -34,11 +34,13 @@ change mitigation.
 ```
 
 ## Table of contents
-1. [Introduction](introduction/introduction.ipynb)
+1. [Introduction]()
+    - [Background](introduction/background.ipynb)
+    - [Related Substantive Literature](introduction/literature.ipynb)
 2. [Model](model/model.ipynb)
 3. [Parameter uncertainty](uncertainty/uncertainty.ipynb)
 4. [Productivity measurement](calibration/calibration.ipynb)
-5. [Results](results/results.ipynb) 
+5. [Results]() 
     - [without stochasticity or ambiguity aversion](results/Deterministic.ipynb)
     - [with robustness to parameter uncertainty](results/HMC.ipynb)
     - [with stochastic variation in agricultural prices](results/MPC.ipynb)
