@@ -51,7 +51,7 @@ change mitigation.
 3. [Model](model/model.md)
 4. [Parameter uncertainty](uncertainty/uncertainty.md)
 5. [Productivity measurement](calibration/calibration.md)
-6. [Solving the maximization problem](solution.md)
+6. [Solving the maximization problem](solution/solution.md)
     - [Solution with parameter ambiguity neutrality](solution/neutrality.md)
     - [Solution with parameter ambiguity aversion](solution/parameter.md)
     - [Solution with price stochasticity under ambiguity neutrality](solution/price.md)
