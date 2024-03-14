@@ -159,7 +159,7 @@ starting point motivated by robustness. Thus their axiomatic motivation
 is different from the distributional robustness that interests us.*
 
 
-
+(conjugate)=
 **Remark 3**. *As posed, the minimization is over the marginal posterior
 for the regression coefficients. With relative entropy divergence, we
 may equivalently solve the minimization problem using the relative
