@@ -16,8 +16,7 @@ latex:
     targetname: book.tex
 
 # Add a bibtex file so that we can create citations
-bibtex_bibfiles:
-  - Amazon.bib
+bibtex_bibfiles: Amazon.bib
 
 
 # Information about where the book exists on the web
@@ -36,17 +35,16 @@ html:
 
 sphinx:
   config:
-    # html_theme : 'piccolo_theme'
+    html_extra_path: ['aux_input']
+    bibtex_reference_style: author_year
+    bibtex_default_style: plain
     html_theme_options: 
               "show_nav_level": 0 
-    # mathjax_macros: book/latexdefs.tex
-      # include: 
-  # nb_custom_formats:
-  #       .sty:
-  #           - jupytext.reads
-  #           - fmt: sty
+    # bibtex_bibfiles:
+    #           - Amazon.bib
   extra_extensions:
-  - sphinx_external_toc
+    - sphinx_external_toc
+    - sphinxcontrib.bibtex
 
 # parse:
 #   myst_enable_extensions:

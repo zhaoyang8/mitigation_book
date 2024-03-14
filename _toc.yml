@@ -3,39 +3,39 @@
 
 format: jb-book
 root: intro
+
+
+
 # parts:
+#   - caption: Introduction
+#     chapters:
+#     - file: introduction/background.ipynb
+#     - file: introduction/literature.ipynb
 #   - caption: Model
 #     chapters:
-#     - file: models/MPC
-#     - file: models/HMC
-parts:
-  - caption: Introduction
-    chapters:
-    - file: introduction/background.ipynb
-    - file: introduction/literature.ipynb
-  - caption: Model
-    chapters:
-    - file: model/model.ipynb
-  - caption: Uncertainty
-    chapters:
-    - file: uncertainty/uncertainty.ipynb
-  - caption: Calibration
-    chapters:
-    - file: calibration/calibration.ipynb
-  - caption: Results
-    chapters:
-    - file: results/Deterministic.ipynb
-    - file: results/HMC.ipynb
-    - file: results/MPC.ipynb
-
-
-# chapters:
-# - file: introduction/introduction.ipynb
-# - file: model/model.ipynb
-# - file: uncertainty/uncertainty.ipynb
-# - file: calibration/calibration.ipynb
-# - file: results/results.ipynb
-#   sections:
+#     - file: model/model.ipynb
+#   - caption: Uncertainty
+#     chapters:
+#     - file: uncertainty/uncertainty.ipynb
+#   - caption: Calibration
+#     chapters:
+#     - file: calibration/calibration.ipynb
+#   - caption: Results
+#     chapters:
 #     - file: results/Deterministic.ipynb
 #     - file: results/HMC.ipynb
-#     - file: results/MPC.ipynb 
+#     - file: results/MPC.ipynb
+
+
+chapters:
+- file: introduction/introduction.md
+- file: literature/literature.ipynb
+- file: model/model.ipynb
+- file: uncertainty/uncertainty.ipynb
+- file: calibration/calibration.ipynb
+- file: results/results.ipynb
+  sections:
+    - file: results/Deterministic.ipynb
+    - file: results/HMC.ipynb
+    - file: results/MPC.ipynb 
+- file: reference.md
