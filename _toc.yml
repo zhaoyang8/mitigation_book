@@ -32,10 +32,18 @@ chapters:
 - file: literature/literature.md
 - file: model/model.md
 - file: uncertainty/uncertainty.md
-- file: calibration/calibration.ipynb
-- file: results/results.ipynb
+- file: calibration/calibration.md
+- file: solution/solution.md
   sections:
-    - file: results/Deterministic.ipynb
-    - file: results/HMC.ipynb
-    - file: results/MPC.ipynb 
+    - file: solution/neutrality.md
+    - file: solution/parameter.md
+    - file: solution/price.md
+- file: results/results.md
+  sections:
+    - file: results/shadow_price.md
+    - file: results/Deterministic.md
+    - file: results/HMC.md
+    - file: results/MPC.md
+- file: conclusion/conclusion.md
+- file: appendix/appendix.md
 - file: reference.md
