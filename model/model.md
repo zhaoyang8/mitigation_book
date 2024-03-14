@@ -210,10 +210,9 @@ is beyond the scope of this particular exercise.*
     land (Mapbiomas - www.mapbiomas.org).
 
 [^3]: For calibration of this and the other parameters see Section
-    [\[sec:cal\]](#sec:cal){reference-type="ref" reference="sec:cal"}
+    [calibration](#sec:cal)
 
-[^4]: For simplicity, equation [\[eq:x\]](#eq:x){reference-type="eqref"
-    reference="eq:x"} assumes that all deforestation occurs in primary
+[^4]: For simplicity, equation [\[eq:x\]](#eq:x) assumes that all deforestation occurs in primary
     forest, what is not far from what has been observed in the Brazilian
     Amazon.
 

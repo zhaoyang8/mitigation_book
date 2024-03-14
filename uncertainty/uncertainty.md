@@ -240,8 +240,7 @@ worst-case probabilities.
     axiomatic perspective.
 
 [^3]: See Appendix
-    [\[appen:baseline\]](#appen:baseline){reference-type="ref"
-    reference="appen:baseline"} for details
+    [baseline distribution](#appendixA) for details
 
 [^4]: Our static formulation of the two-player decision problem does not
     allow for the possibility of dynamic learning going forward. We

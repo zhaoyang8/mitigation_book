@@ -45,5 +45,5 @@ chapters:
     - file: results/HMC.md
     - file: results/MPC.md
 - file: conclusion/conclusion.md
-- file: appendix/appendix.md
 - file: reference.md
+- file: appendix/appendix.md
