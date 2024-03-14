@@ -29,9 +29,9 @@ root: intro
 
 chapters:
 - file: introduction/introduction.md
-- file: literature/literature.ipynb
-- file: model/model.ipynb
-- file: uncertainty/uncertainty.ipynb
+- file: literature/literature.md
+- file: model/model.md
+- file: uncertainty/uncertainty.md
 - file: calibration/calibration.ipynb
 - file: results/results.ipynb
   sections:

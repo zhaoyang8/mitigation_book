@@ -35,6 +35,7 @@ html:
 
 sphinx:
   config:
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     html_extra_path: ['aux_input']
     bibtex_reference_style: author_year
     bibtex_default_style: plain
@@ -46,8 +47,13 @@ sphinx:
     - sphinx_external_toc
     - sphinxcontrib.bibtex
 
-# parse:
-#   myst_enable_extensions:
-#     - amsmath
+parse:
+  myst_enable_extensions:
+    - amsmath
+    - dollarmath
+    - html_image
+
+
+
 
 only_build_toc_files: true
