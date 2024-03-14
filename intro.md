@@ -33,8 +33,8 @@ change mitigation.
 :align: center
 ```
 
-## Table of contents
-1. [Introduction]()
+
+<!-- 1. [Introduction]()
     - [Background](introduction/background.ipynb)
     - [Related Substantive Literature](introduction/literature.ipynb)
 2. [Model](model/model.ipynb)
@@ -43,9 +43,17 @@ change mitigation.
 5. [Results]() 
     - [without stochasticity or ambiguity aversion](results/Deterministic.ipynb)
     - [with robustness to parameter uncertainty](results/HMC.ipynb)
+    - [with stochastic variation in agricultural prices](results/MPC.ipynb) -->
+
+## Table of contents
+1. [Introduction](introduction/background.ipynb)
+2. [Related Literature](introduction/literature.ipynb)
+3. [Model](model/model.ipynb)
+4. [Parameter uncertainty](uncertainty/uncertainty.ipynb)
+5. [Productivity measurement](calibration/calibration.ipynb)
+6. [Results]() 
+    - [without stochasticity or ambiguity aversion](results/Deterministic.ipynb)
+    - [with robustness to parameter uncertainty](results/HMC.ipynb)
     - [with stochastic variation in agricultural prices](results/MPC.ipynb)
-    <!-- 5. [Uncertainty in parameters](models/HMC.ipynb)
-    6. [Uncertainty in agricultural price](models/MPC.ipynb) -->
-    <!-- 1. [Uncertainty in agricultural price](models/MPC.ipynb) -->
 
 
