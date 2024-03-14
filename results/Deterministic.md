@@ -1,5 +1,4 @@
 
-
 ## Results for case without stochasticity or ambiguity aversion 
 
 <hr style="height:4px; background-color:black; border:none;">
@@ -28,14 +27,14 @@ for $b=\$10.$
 <br>
 
 (fig:zShare1000-det)=
-<img src="../aux_input/plotPrediction_zShare_1043Sites_det.png" alt="Drawing" width="300" style="display: inline;" /> <img src="../aux_input/plotPrediction_x_1043Sites_det.png" alt="Drawing" width="300" style="display: inline;" />
+<img src="../aux_input/plotPrediction_zShare_1043Sites_det.png" alt="Drawing" width="350" style="display: inline;" /> <img src="../aux_input/plotPrediction_x_1043Sites_det.png" alt="Drawing" width="350" style="display: inline;" />
 <br>
 <span style="padding-left: 80px;"> Fig 5: Agricultural area and carbon stock evolution
 
 <br>
 
 (transfer-payment)=
-<img src="../aux_input/plot_net_transfer.png" alt="fishy" class="bg-primary" width="300px">
+<img src="../aux_input/plot_net_transfer.png" alt="fishy" class="bg-primary" width="350px">
 
 Fig 6: Evolution of transfer payments for two choices of
 $b$
@@ -130,7 +129,7 @@ Figure [8](#fig:mapzDecades1000sites-det) provides a more complete
 spatial dynamic characterization for transfers of \$15/ton. In the
 optimal solution, much of the change in land occupation occurs within
 the first 15 years. Appendix
-[A](#appendixA) shows how much this process slows down for
+[A](#sec:appendixA) shows how much this process slows down for
 higher choices of the adjustment cost.
 
 ```{table}  Present-value decomposition - 78 sites

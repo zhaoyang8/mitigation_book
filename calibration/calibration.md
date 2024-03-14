@@ -68,21 +68,21 @@ capacity are negatively correlated, this relationship is imperfect.
 <br>
 
 (fig:map)=
-<img src="../aux_input/map_z2017_1043Sites.png" alt="Drawing" width="300" style="display: inline;" /> <img src="../aux_input/map_x2017_1043Sites.png" alt="Drawing" width="300" style="display: inline;" />
+<img src="../aux_input/map_z2017_1043Sites.png" alt="Drawing" width="350" style="display: inline;" /> <img src="../aux_input/map_x2017_1043Sites.png" alt="Drawing" width="350" style="display: inline;" />
 <br>
 <span style="padding-left: 80px;"> Fig 2: Initial values for agricultural area $z_0^i$ and carbon stock $x_0^i$
 
 <br>
 
 (fig:gamma)=
-<img src="../aux_input/map_gamma_1043Sites.png" alt="Drawing" width="300" style="display: inline;" /> <img src="../aux_input/map_gamma_78Sites.png" alt="Drawing" width="300" style="display: inline;" />
+<img src="../aux_input/map_gamma_1043Sites.png" alt="Drawing" width="350" style="display: inline;" /> <img src="../aux_input/map_gamma_78Sites.png" alt="Drawing" width="350" style="display: inline;" />
 <br>
 <span style="padding-left: 80px;"> Fig 3. Carbon sequestration parameters (left: 1043 sites, right: 78 sites).
 
 <br>
 
 (fig:theta)=
-<img src="../aux_input/map_theta_1043Sites.png" alt="Drawing" width="300" style="display: inline;" /> <img src="../aux_input/map_theta_78Sites.png" alt="Drawing" width="300" style="display: inline;" />
+<img src="../aux_input/map_theta_1043Sites.png" alt="Drawing" width="350" style="display: inline;" /> <img src="../aux_input/map_theta_78Sites.png" alt="Drawing" width="350" style="display: inline;" />
 <br>
 <span style="padding-left: 80px;"> Fig 4. Agricultural productivity heterogeneity  (left: 1043 sites, right: 78 sites).
 

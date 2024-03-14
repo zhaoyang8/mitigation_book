@@ -13,7 +13,7 @@ to perform robustness calculations for several values of $\xi$, here we
 report results only for $\xi = \infty$ and $\xi=1.$ We refer to the
 former as 'ambiguity neutral' and the latter as 'ambiguity averse.' We
 report results for other values of $\xi$ in the appendix
-[A.11](#appendixA). The implied ambiguity adjustments to the
+[A.11](#sec:appendixA). The implied ambiguity adjustments to the
 probabilities help us gauge the plausibility of different values of
 $\xi.$ The calculated shadow price, as reported in Table
 {ref}`tab:shadow_price`, is \$7.1/ton under ambiguity neutrality
@@ -45,8 +45,8 @@ reforestation becomes a more prominent ambition for the planner.
 <br>
 
 (fig:Ambiguity adjustment)=
-<img src="../aux_input/theta_distribution_71.png" alt="Drawing" width="300" style="display: inline;" /> <img src="../aux_input/gamma_distribution_71.png" alt="Drawing" width="300" style="display: inline;" />
-<img src="../aux_input/theta_distribution_74.png" alt="Drawing" width="300" style="display: inline;" /> <img src="../aux_input/gamma_distribution_74.png" alt="Drawing" width="300" style="display: inline;" />
+<img src="../aux_input/theta_distribution_71.png" alt="Drawing" width="350" style="display: inline;" /> <img src="../aux_input/gamma_distribution_71.png" alt="Drawing" width="350" style="display: inline;" />
+<img src="../aux_input/theta_distribution_74.png" alt="Drawing" width="350" style="display: inline;" /> <img src="../aux_input/gamma_distribution_74.png" alt="Drawing" width="350" style="display: inline;" />
 <br>
 <span style="padding-left: 80px;"> Fig 9: Baseline and ambiguity adjusted densities for b = 0 and b = 15
 
@@ -84,7 +84,7 @@ land allocated to agriculture as is evident from Figure
 
 
 (fig:map-hmc-b0_at_price_neutral)=
-<img src="../aux_input/map_78site_det_spike_b0_same_price_neutral.png" alt="Drawing" width="300" style="display: inline;" /> <img src="../aux_input/map_78site_unc_spike_b0_same_price_neutral.png" alt="Drawing" width="300" style="display: inline;" />
+<img src="../aux_input/map_78site_det_spike_b0_same_price_neutral.png" alt="Drawing" width="350" style="display: inline;" /> <img src="../aux_input/map_78site_unc_spike_b0_same_price_neutral.png" alt="Drawing" width="350" style="display: inline;" />
 
 <br>
 Fig 10: Spatial allocation comparison for <span
@@ -98,7 +98,7 @@ deforestation. Sites 71 and 74 are shaded. Ambiguity neutral left, ambiguity ave
 <br>
 
 (aggz-hmc_at_price_neutrality)=
-<img src="../aux_input/aggregate_percentage_Z_b0_same_price_neutral.png" alt="fishy" class="bg-primary" width="600px">
+<img src="../aux_input/aggregate_percentage_Z_b0_same_price_neutral.png" alt="fishy" class="bg-primary" width="700px">
 
 Fig 11: Evolution of agricultural area under ambiguity neutrality and
 ambiguity aversion for $b=0$ at a common business-as-usual carbon price,
@@ -117,7 +117,7 @@ responses, it now does so in a much more muted way than in Figure
 
 
 (map-hmc-b0)=
-<img src="../aux_input/map_78site_det_spike_b0.png" alt="Drawing" width="300" style="display: inline;" /> <img src="../aux_input/map_78site_det_spike_b0.png" alt="Drawing" width="300" style="display: inline;" />
+<img src="../aux_input/map_78site_det_spike_b0.png" alt="Drawing" width="350" style="display: inline;" /> <img src="../aux_input/map_78site_det_spike_b0.png" alt="Drawing" width="350" style="display: inline;" />
 
 <br>
 Fig 12: Spatial allocations for <span
@@ -149,7 +149,7 @@ to uncertainty about carbon sequestration productivities.
 
 
 (map-hmc-b15)=
-<img src="../aux_input/map_78site_det_spike_b15.png" alt="Drawing" width="300" style="display: inline;" /> <img src="../aux_input/map_78site_det_spike_b15.png" alt="Drawing" width="300" style="display: inline;" />
+<img src="../aux_input/map_78site_det_spike_b15.png" alt="Drawing" width="350" style="display: inline;" /> <img src="../aux_input/map_78site_det_spike_b15.png" alt="Drawing" width="350" style="display: inline;" />
 
 <br>
 Fig 13: Spatial allocation for <span
@@ -176,7 +176,7 @@ ambiguity aversion. This holds true for $b = \$15$ as well.
 
 
 (aggz-hmc)=
-<img src="../aux_input/aggregate_percentage_Z_b0.png" alt="Drawing" width="300" style="display: inline;" /> <img src="../aux_input/aggregate_percentage_Z_b15.png" alt="Drawing" width="300" style="display: inline;" />
+<img src="../aux_input/aggregate_percentage_Z_b0.png" alt="Drawing" width="350" style="display: inline;" /> <img src="../aux_input/aggregate_percentage_Z_b15.png" alt="Drawing" width="350" style="display: inline;" />
 
 <br>
 Fig 14: Evolution of agricultural area under ambiguity neutrality
@@ -275,7 +275,7 @@ site-specific productivities.*
 [^3]: The sites were selected at the imposed business-as-usual price
     under ambiguity averse. See Figure
     [16] in Appendix
-    [A.10](#appendixA) for a map of the site locations.
+    [A.10](#sec:appendixA) for a map of the site locations.
 
 [^4]: Notice that the uncertainty adjusted $\gamma$ distributions
     actually shift to the right when $b = \$0.$

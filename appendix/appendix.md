@@ -142,7 +142,7 @@ of its time the higher of the two state.
 
 
 (fig:smoothedprobabilities)=
-<img src="../aux_input/smoothed_prob_m2_uncon.png" alt="Drawing" width="300" style="display: inline;" /> <img src="../aux_input/smoothed_prob_m3_constrained.png" alt="Drawing" width="300" style="display: inline;" />
+<img src="../aux_input/smoothed_prob_m2_uncon.png" alt="Drawing" width="350" style="display: inline;" /> <img src="../aux_input/smoothed_prob_m3_constrained.png" alt="Drawing" width="350" style="display: inline;" />
 <br>
 <span style="padding-left: 80px;"> Fig 15: Smoothed probabilities for the two hidden state Markov chain
 models
@@ -276,7 +276,7 @@ reference.
 <br>
 
 (map-reference)=
-<img src="../aux_input/map_reference_same_price.png" alt="fishy" class="bg-primary" width="300px">
+<img src="../aux_input/map_reference_same_price.png" alt="fishy" class="bg-primary" width="350px">
 
 Fig 16: Locations of the different site numbers
 
@@ -309,8 +309,8 @@ ambiguity-adjusted distributions.
 <br>
 
 (fig:Ambiguity_adjustment_b0)=
-<img src="../aux_input/theta_distribution_71_b0.png" alt="Drawing" width="300" style="display: inline;" /> <img src="../aux_input/gamma_distribution_71_b0.png" alt="Drawing" width="300" style="display: inline;" />
-<img src="../aux_input/theta_distribution_74_b0.png" alt="Drawing" width="300" style="display: inline;" /> <img src="../aux_input/gamma_distribution_74_b0.png" alt="Drawing" width="300" style="display: inline;" />
+<img src="../aux_input/theta_distribution_71_b0.png" alt="Drawing" width="350" style="display: inline;" /> <img src="../aux_input/gamma_distribution_71_b0.png" alt="Drawing" width="350" style="display: inline;" />
+<img src="../aux_input/theta_distribution_74_b0.png" alt="Drawing" width="350" style="display: inline;" /> <img src="../aux_input/gamma_distribution_74_b0.png" alt="Drawing" width="350" style="display: inline;" />
 <br>
 <span style="padding-left: 80px;"> Fig 17: Baseline and ambiguity adjusted densities for b = 0 
 
@@ -318,12 +318,12 @@ ambiguity-adjusted distributions.
 <br>
 
 (fig:Ambiguity_adjustment_b15)=
-<img src="../aux_input/theta_distribution_71_b15.png" alt="Drawing" width="300" style="display: inline;" /> <img src="../aux_input/gamma_distribution_71_b15.png" alt="Drawing" width="300" style="display: inline;" />
-<img src="../aux_input/theta_distribution_74_b15.png" alt="Drawing" width="300" style="display: inline;" /> <img src="../aux_input/gamma_distribution_74_b15.png" alt="Drawing" width="300" style="display: inline;" />
+<img src="../aux_input/theta_distribution_71_b15.png" alt="Drawing" width="350" style="display: inline;" /> <img src="../aux_input/gamma_distribution_71_b15.png" alt="Drawing" width="350" style="display: inline;" />
+<img src="../aux_input/theta_distribution_74_b15.png" alt="Drawing" width="350" style="display: inline;" /> <img src="../aux_input/gamma_distribution_74_b15.png" alt="Drawing" width="350" style="display: inline;" />
 <br>
 <span style="padding-left: 80px;"> Fig 18: Baseline and ambiguity adjusted densities for b = 15 
 
-(appen:discrete_model)
+(appen:discrete_model)=
 ## B Model discretization 
 
 In order to obtain numerical solutions for the social planner problem,
