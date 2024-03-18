@@ -22,7 +22,7 @@ The shadow price reduction under ambiguity aversion compensates for the
 slower destruction of the forests when there is ambiguity in the
 agricultural productivities for the various sites.
 
-Figure [9](#fig:Ambiguity adjustment) shows the baseline and
+Figure [9](#fig:Ambiguity_adjustment) shows the baseline and
 ambiguity-adjusted distributions for parameters $\gamma$ and $\theta$
 when $b=0$ and $b=15.$ We display results for the two sites with largest
 divergence between the baseline probability distributions and the
@@ -44,14 +44,14 @@ reforestation becomes a more prominent ambition for the planner.
 
 <br>
 
-(fig:Ambiguity adjustment)=
+(fig:Ambiguity_adjustment)=
 <img src="../aux_input/theta_distribution_71.png" alt="Drawing" width="350" style="display: inline;" /> <img src="../aux_input/gamma_distribution_71.png" alt="Drawing" width="350" style="display: inline;" />
 <img src="../aux_input/theta_distribution_74.png" alt="Drawing" width="350" style="display: inline;" /> <img src="../aux_input/gamma_distribution_74.png" alt="Drawing" width="350" style="display: inline;" />
 <br>
 <span style="padding-left: 80px;"> Fig 9: Baseline and ambiguity adjusted densities for b = 0 and b = 15
 
 
-
+<br>
 
 Some sites are deforested, and some sites are reforested by the planner
 in the absence of external transfer payments. Figures
@@ -67,14 +67,14 @@ Figure [10](fig:map-hmc-b0_at_price_neutral) compares what happens when
 $b=0$ under ambiguity aversion, using the same business-as-usual carbon
 emission price as we used under ambiguity neutrality. As examples, the
 two sites featured in Figure
-[9](#fig:Ambiguity adjustment) are shaded in. For instance, for
+[9](#fig:Ambiguity_adjustment) are shaded in. For instance, for
 site 71, the change in land allocation moves from year fifteen to one in
 which there is no change in land allocation over the time span of 50
 years. For site 74 the change is from year three under ambiguity
 neutrality to year six under ambiguity aversion. The delay is because
 the planner is particularly skeptical of the baseline distribution for
 the site-specific agricultural productivity as displayed in Figure
-[9](#fig:Ambiguity adjustment). More generally, Figure
+[9](#fig:Ambiguity_adjustment). More generally, Figure
 [12](#map-hmc-b0) shows how
 the delays in deforestation and accelerations of reforestation for all
 of the 78 sites under ambiguity aversion, in the absence of transfer
@@ -82,6 +82,8 @@ payments. Overall, the ambiguity aversion decreases substantially the
 land allocated to agriculture as is evident from Figure
 [11](#aggz-hmc_at_price_neutrality).
 
+
+<br>
 
 (fig:map-hmc-b0_at_price_neutral)=
 <img src="../aux_input/map_78site_det_spike_b0_same_price_neutral.png" alt="Drawing" width="350" style="display: inline;" /> <img src="../aux_input/map_78site_unc_spike_b0_same_price_neutral.png" alt="Drawing" width="350" style="display: inline;" />
@@ -104,6 +106,7 @@ Fig 11: Evolution of agricultural area under ambiguity neutrality and
 ambiguity aversion for $b=0$ at a common business-as-usual carbon price,
 $P^{ee} = 7.1.$
 
+<br>
 
 The previous results hold the business-as-usual price fixed as we
 introduce ambiguity aversion. As we know from Table
@@ -114,6 +117,9 @@ in Figure [12](#map-hmc-b0).
 While ambiguity aversion still shifts the dates of the maximal
 responses, it now does so in a much more muted way than in Figure
 [10](fig:map-hmc-b0_at_price_neutral).
+
+
+<br>
 
 
 (map-hmc-b0)=
@@ -139,7 +145,7 @@ As shown in Figure [13](#map-hmc-b15), when $b= 15$, there is only reforestation
 dates of maximal reforestation turn out show only limited sensitivity to
 the ambiguity aversion in this case. For instance, consider site 71,
 which we featured in the top panel of Figure
-[9](#fig:Ambiguity adjustment) and is shaded in Figure
+[9](#fig:Ambiguity_adjustment) and is shaded in Figure
 [13](#map-hmc-b15). Under
 ambiguity neutrality, the planner's peak reforesting takes place in year
 five; and under ambiguity aversion, this action is delayed until year
@@ -218,7 +224,8 @@ forest to absorb carbon, leading to a very small increase in the land
 allocated to agriculture.
 
 
-
+```{admonition} Table
+:class: hint
 ```{table}  Present-value decomposition - parameter ambiguity
 :name: tab:valueObjectiveDecomposition_78sites_hmc
 |     |  | agricultural output    |    |           | planner  value |    |
@@ -236,7 +243,8 @@ allocated to agriculture.
 
 <br>
 
-**Remark 1**. *In contrast to land allocation process, $Z,$ with
+````{prf:remark}
+In contrast to land allocation process, $Z,$ with
 parameter ambiguity, the state vector process, $X$, of captured carbon
 is disguised to the planner, because initial conditions and the dynamics
 of carbon captured depend on the value of $\gamma.$ This has
@@ -250,8 +258,8 @@ differences in their aversion to uncertainty. Also, parameter
 uncertainty opens the door to explicit learning that we abstract from
 here. Rather than being purely passive, this learning could offer the
 potential for experimentation as a way to gain a better understanding of
-site-specific productivities.*
-
+site-specific productivities.
+````
 
 
 

@@ -13,7 +13,7 @@ tractable, we have the social planner assume a two state Markov process
 for the price process. We obtained the inputs into this specification by
 estimating a hidden-state Markov process with Gaussian noise as we
 describe in Appendix
-[A.8](#appendixA). Of course, this is a rather substantial
+[A.8](#sec:appendixA). Of course, this is a rather substantial
 reduction in the price stochastic structure of agricultural prices, but
 it allows to engage in an initial explore of price randomness in a
 tractable way. Under the two-state Markov chain, there are two price
@@ -38,25 +38,26 @@ a constant price gives quite an accurate approximation to the median
 response. In this sense, the stochastic specification for agricultural
 prices only has modest impact on our results. Finally, Table
 {ref}`tab:valueObjectiveDecomposition_78sites_mpc` in Appendix
-[A.8](#appendixA) exhibits the transfer costs and again these
+[A.8](#sec:appendixA) exhibits the transfer costs and again these
 show only a modest impact of the presence uncertainty.
 
 
-
+```{admonition} Table
+:class: hint
 ```{table}   Present-value decomposition with stochastic agricultural prices
 :name: tab:valueObjectiveDecomposition_78sites_mpc
 |                    | agricultural output value | net Transfers | forest Services | adjustment Costs | planner Value |
 |--------------------|---------------------------|---------------|-----------------|------------------|---------------|
 | $p^a$ =  |            stochastic               |               |                 |                  |
-| b = \$0            |                           |               |                 |                  |
+| b=\$0            |                           |               |                 |                  |
 | 10\%               | 3.19                      | 0.00          | -1.07           | 0.06             | 2.10          |
 | 50\%               | 3.30                      | 0.00          | -1.05           | 0.06             | 2.19          |
 | 90\%               | 3.39                      | 0.00          | -1.03           | 0.06             | 2.27          |
-| b = \$15           |                           |               |                 |                  |
+| b=\$15           |                           |               |                 |                  |
 | 10\%               | 0.24                      | 1.99          | 0.92            | 0.19             | 2.97          |
 | 50\%               | 0.26                      | 2.00          | 0.92            | 0.19             | 2.99          |
 | 90\%               | 0.27                      | 2.00          | 0.92            | 0.19             | 3.00          |
-| b = \$25           |                           |               |                 |                  |
+| b=\$25           |                           |               |                 |                  |
 | 10\%               | 0.16                      | 3.48          | 0.96            | 0.27             | 4.33          |
 | 50\%               | 0.18                      | 3.48          | 0.96            | 0.28             | 4.34          |
 | 90\%               | 0.19                      | 3.48          | 0.96            | 0.28             | 4.35          |
@@ -70,21 +71,22 @@ show only a modest impact of the presence uncertainty.
 
 <br>
 
-**Remark 1**. *One possible way to amplify the models impact of making
+````{prf:remark}
+One possible way to amplify the models impact of making
 agricultural prices stochastic is to introduce specification uncertainty
 into the analysis. {cite:t}`Anderson2003` propose a recursive way to make this
 adjustment by using a relative entropy divergence to form penalties that
 limit the potential misspecifications that are explored by the planner.
 Thus the MPC approach could potentially be extended to incorporate this
-extension, opening the door to greater adjustments for uncertainty.*
-
+extension, opening the door to greater adjustments for uncertainty.
+````
 
 <br>
 <hr style="height:4px; background-color:black; border:none;">
 
 
 
-[^2]: Appendix [A.8](#appendixA) gives results for a second estimation of
+[^2]: Appendix [A.8](#sec:appendixA) gives results for a second estimation of
     the hidden-state Markov process in which Gaussian shock variances
     are constrained to be the same. In this case, both realized states
     are lower and most of the time is spent in the higher of the two
@@ -94,7 +96,7 @@ extension, opening the door to greater adjustments for uncertainty.*
     agricultural prices are stochastic, we used the smoothed
     probabilities reported in left panel of Figure
     [15] in Appendix
-    [A.8](#appendixA) to assign the discrete states in our
+    [A.8](#sec:appendixA) to assign the discrete states in our
     computations. While we used a probability .5 threshold for this
     assignment, many of the probabilities are actually close to zero or
     one.

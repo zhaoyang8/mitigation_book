@@ -46,6 +46,7 @@ sphinx:
   extra_extensions:
     - sphinx_external_toc
     - sphinxcontrib.bibtex
+    - sphinx_proof
 
 parse:
   myst_enable_extensions:

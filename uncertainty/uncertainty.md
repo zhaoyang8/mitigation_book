@@ -94,13 +94,15 @@ regression coefficients. This simplifies substantially the numerical
 computations.
 
 
-**Remark 1**. *An interesting extension could include a probabilistic
+
+````{prf:remark}
+An interesting extension could include a probabilistic
 specification of heterogeneity in the productivity parameters not
 captured by the regression formulation. This would add to the
 computational burden as the sensitivity analysis would be over a
 substantially larger space and would require a plausible probability
-specification of the unobserved heterogeneity.*
-
+specification of the unobserved heterogeneity.
+````
 
 Given the vector of regression parameters, $\beta,$ in a set,
 ${\mathcal B},$ we write $f(d, \beta)$ for the discounted utility
@@ -148,7 +150,9 @@ decision problem uses the familiar expected utility objective:
 $$\max_{\boldsymbol{d}}  \int_{\mathcal B} f({ d},  {\beta} )   g({\beta}) d\pi(\beta).$$
 
 
-**Remark 2**. *The minimized objective given by
+
+````{prf:remark}
+The minimized objective given by
 {eq}`minimized_objective` is a special case of a smooth ambiguity
 objective, first suggested by {cite:t}`KlibanoffMarinacciMukerji:2005`. They
 deduced a rationale for an ambiguity adjustment represented using a
@@ -156,25 +160,28 @@ concave function distinct from the one used for expressing risk
 aversion. While they take such a concave adjustment to be a starting
 point, we deduce a logarithmic-exponential representation from a
 starting point motivated by robustness. Thus their axiomatic motivation
-is different from the distributional robustness that interests us.*
-
+is different from the distributional robustness that interests us.
+````
 
 (conjugate)=
-**Remark 3**. *As posed, the minimization is over the marginal posterior
+````{prf:remark}
+As posed, the minimization is over the marginal posterior
 for the regression coefficients. With relative entropy divergence, we
 may equivalently solve the minimization problem using the relative
 entropy divergence over the conditional posterior distribution for the
 regression coefficients and the marginal posterior for the
 regression-error variances. We use this observation in our actual
-calculations to simplify our algorithmic implementation.*
+calculations to simplify our algorithmic implementation.
+````
 
+<br>
 
 Given the parameter ambiguity adjustment, the implied decision problem
 is a two-player zero-sum game. If we constraint the decision process $d$
 to a convex set ${\mathcal D}.$
 
 (prob:primal)=
-**Problem 4**.
+**Problem 1**
 
 $$\max_{d \in {\mathcal D}} \min_{g \ge 0, \int g d\pi = 1}   \int_{\mathcal B} f({ d},  { \beta} )   g(\beta) d\pi(\beta) 
 + \xi \int_{\mathcal B} \log g(\beta ) g({\beta}) d\pi(\beta) .$$
@@ -184,7 +191,7 @@ For conceptual reasons, we switch order of maximization and
 minimization.
 
 (prob:reverse)=
-**Problem 5**.
+**Problem 2**
 
 $$\min_{g \ge 0 , \int g d\pi = 1} \max_{ d \in {\mathcal D}}  \int_{\mathcal B} f({ d},  { \beta} )   g({\beta }) d\pi(\beta ) 
 + \xi \int \log g(\beta ) g({ \beta }) d\pi( \beta ) .$$
@@ -192,16 +199,16 @@ $$\min_{g \ge 0 , \int g d\pi = 1} \max_{ d \in {\mathcal D}}  \int_{\mathcal B}
 
 Under quite general conditions we may invoke the Max-min Theorem and
 claim that the objective for Problems
-[4](#prob:primal) and
-[5](#prob:reverse) will
+[1](#prob:primal) and
+[2](#prob:reverse) will
 be same and the minimizing $g$ evaluated at the maximized $d$ for the
-Problem [4](#prob:primal)
+Problem [1](#prob:primal)
 will agree with the minimizing $g$ from Problem
-[5](#prob:reverse).
+[2](#prob:reverse).
 Similarly, the optimized decision processes will agree.
 
 Consider the inner maximization for Problem
-[5](#prob:reverse):
+[2](#prob:reverse):
 
 $$\max_{\boldsymbol{d}}  \int_{\mathcal B} f({ d},  {\beta} )   g({\beta}) d\pi(\beta)$$
 
@@ -240,7 +247,7 @@ worst-case probabilities.
     axiomatic perspective.
 
 [^3]: See Appendix
-    [baseline distribution](#appendixA) for details
+    [baseline distribution](#sec:appendixA) for details
 
 [^4]: Our static formulation of the two-player decision problem does not
     allow for the possibility of dynamic learning going forward. We

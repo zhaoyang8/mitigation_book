@@ -118,6 +118,8 @@ specifications are given in Table
 {ref}`tab:hidden-markov-model`.
 
 
+```{admonition} Table
+:class: hint
 ```{table}  Estimates for the hidden-state Markov models
 :name: tab:hidden-markov-model
 |      | distinct   | variances  |                          | a common  | variance   |
@@ -154,6 +156,8 @@ less constrained of the two models and the BIC criterion just the
 opposite.
 
 
+```{admonition} Table
+:class: hint
 ```{table}  Likelihood ratios and information criteria 
 :name: tab:information_criteria
 |                | distinct variances | common variance |
@@ -174,21 +178,22 @@ differences between results are modest.
 
 
 
-
+```{admonition} Table
+:class: hint
 ```{table}   Present-value decomposition with stochastic agricultural prices
 :name: tab:valueObjectiveDecomposition_78sites_mpc_constrained
 |          | agricultural output value | net Transfers | forest Services | adjustment Costs | planner Value |
 |----------|---------------------------|---------------|-----------------|------------------|---------------|
 | $p^a$ =  | stochastic                |               |                 |                  |               |
-| b = \$0  |                           |               |                 |                  |               |
+| b=\$0  |                           |               |                 |                  |               |
 | 10\%     | 3.22                      | 0.00          | -1.01           | 0.05             | 2.19          |
 | 50\%     | 3.34                      | 0.00          | -1.00           | 0.05             | 2.29          |
 | 90\%     | 3.43                      | 0.00          | -0.97           | 0.05             | 2.37          |
-| b = \$15 |                           |               |                 |                  |               |
+| b=\$15 |                           |               |                 |                  |               |
 | 10\%     | 0.24                      | 2.00          | 0.84            | 0.19             | 2.89          |
 | 50\%     | 0.26                      | 2.00          | 0.84            | 0.19             | 2.91          |
 | 90\%     | 0.26                      | 2.00          | 0.84            | 0.19             | 2.91          |
-| b = \$25 |                           |               |                 |                  |               |
+| b=\$25 |                           |               |                 |                  |               |
 | 10\%     | 0.16                      | 3.48          | 0.96            | 0.27             | 4.33          |
 | 50\%     | 0.18                      | 3.48          | 0.96            | 0.28             | 4.34          |
 | 90\%     | 0.19                      | 3.48          | 0.96            | 0.28             | 4.35          |
@@ -210,7 +215,8 @@ stochastic variation in agricultural prices.
 
 
 
-
+```{admonition} Table
+:class: hint
 ```{table}   Transfer costs under ambiguity - 15 years
 :name: tab:transferCost_78sites_hmc_y15
 |       |     |                        | ambiguity neutral                  |                           |                        | ambiguity aversion                 |                           |
@@ -224,7 +230,8 @@ stochastic variation in agricultural prices.
 ```
 
 
-
+```{admonition} Table
+:class: hint
 ```{table}   Transfer costs under ambiguity - 30 years
 :name: tab:transferCost_78sites_hmc_y30
 |       |     |                        | ambiguity neutral                  |                           |                        | ambiguity aversion                 |                           |
@@ -240,7 +247,8 @@ stochastic variation in agricultural prices.
 
 
 
-
+```{admonition} Table
+:class: hint
 ```{table}  Transfer costs with stochastic agricultural prices
 :name: tab:transferCost_78sites_mpc
 |     |                        | 15 years                 |                           |                        | 30 years                 |                           |
@@ -292,6 +300,8 @@ the present values under $\xi=2$ in comparison to $\xi=\infty$. Figure
 ambiguity-adjusted distributions.
 
 
+```{admonition} Table
+:class: hint
 ```{table}  Present-value decomposition - parameter ambiguity $\xi=2$
 :name: tab:valueObjectiveDecomposition_78sites_hmc_alt_xi
 |    |              | agricultural output |         |              | planner value |         |
@@ -464,6 +474,8 @@ regression statistics. In the following tables, we present quantiles for
 the posterior distributions described above:
 
 
+```{admonition} Table
+:class: hint
 ```{table}  Quantiles for θ posterior estimation
 :name: tab:theta_estimation
 |      | $\beta_0^{	\theta}$ | $\beta_1^{\theta}$ | $\beta_2^{\theta}$ | $\beta_3^{\theta}$ | $\beta_4^{\theta}$ | $\beta_5^{\theta}$ | $\beta_6^{\theta}$ | $\beta_7^{\theta}$ |
@@ -474,6 +486,9 @@ the posterior distributions described above:
 
 ```
 
+
+```{admonition} Table
+:class: hint
 ```{table}  Quantiles for γ posterior estimation
 :name: tab:gamma_estimation
 |      | $\beta_0^{\gamma}$ | $\beta_1^{\gamma}$ | $\beta_2^{\gamma}$ | $\beta_3^{\gamma}$ | $\beta_4^{\gamma}$ |

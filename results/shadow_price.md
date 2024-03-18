@@ -52,6 +52,13 @@ of $b$ will be less sensitive to the particular model specification.
 Essentially, the same argument applies to changes in the subjective
 discount rate.[^3]
 
+<br>
+
+
+
+```{admonition} Table
+:class: hint
+
 ```{table}  Business-as-usual prices
 :name: tab:shadow_price
 
@@ -62,6 +69,7 @@ discount rate.[^3]
 | 78              | $p^a = 41.1$       | 1        | 5.3                     |
 | 78              | stochastic         | $\infty$ | 6.9                     |
 ```
+
 
 
 

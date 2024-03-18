@@ -48,7 +48,7 @@ calibrated Markov chain.
 <hr style="height:4px; background-color:black; border:none;">
 
 
-[^3]: See Appendix [A](#appendixA) for details.
+[^3]: See Appendix [A](#sec:appendixA) for details.
 
 [^4]: Related computational approaches have been proposed by
     {cite:t}`CaiJuddSteinbacks:2017` and {cite:t}`CaiJudd:2023`.

@@ -26,6 +26,8 @@ for $b=\$10.$
 
 <br>
 
+<br>
+
 (fig:zShare1000-det)=
 <img src="../aux_input/plotPrediction_zShare_1043Sites_det.png" alt="Drawing" width="350" style="display: inline;" /> <img src="../aux_input/plotPrediction_x_1043Sites_det.png" alt="Drawing" width="350" style="display: inline;" />
 <br>
@@ -38,6 +40,10 @@ for $b=\$10.$
 
 Fig 6: Evolution of transfer payments for two choices of
 $b$
+
+<br>
+
+<br>
 
 As we now show, these transfer payments result in a substantial decrease
 in agricultural area and a corresponding increase in forested area. The
@@ -58,6 +64,12 @@ cattle output,[^2] which is more than compensated by \$352 billion in
 transfers and \$246 billion in forest services. Adjustment costs are a
 small part of the story.
 
+<br>
+
+<br>
+
+```{admonition} Table
+:class: hint
 ```{table}  Present-value decomposition - 1043 sites
 :name: tab:valueObjectiveDecomposition_1043sites_det
 | $P^e$ | $b$  | agricultural  output value | net  transfers | forest services | adjustment Costs | planner value |
@@ -70,7 +82,7 @@ small part of the story.
 | 32.6  | 25   | 0.19                       | 3.53           | 1.07            | 0.27             | 4.52          |
 ```
 
-
+<br>
 
 
 Table
@@ -93,6 +105,13 @@ Thus, the results in Table
 trade in instituting a contract that pays Brazil per net ton of CO$_2$
 captured.
 
+
+<br>
+
+<br>
+
+```{admonition} Table
+:class: hint
 ```{table}  Transfer costs - 1043 sites
 :name: tab:transferCost_1043sites_det
 |       |     |                        | 15 years                 |                           |                        | 30 years                 |                           |
@@ -106,7 +125,7 @@ captured.
 | 32.6  | 25  | 8.16                   | 1.73                     | 8.56                      | 15.00                  | 2.86                     | 8.75                      |
 ```
 
-
+<br>
 
 
 Figure [7](#fig:maps1000-det) exhibits the initial distribution of land
@@ -118,12 +137,17 @@ This is in sharp contrast to what transpires in the $b=0$
 business-as-usual specification in which agricultural production becomes
 quite intense in the lower right sites.
 
+<br>
 
 (fig:maps1000-det)=
 <img src="../aux_input/map_z0z30GammaTheta_1043Sites_allPrices_det.png" alt="fishy" class="bg-primary" width="800px">
 
 <span style="padding-left: 220px;">Fig 7: Agricultural area changes after 30
 years.
+
+<br>
+
+<br>
 
 Figure [8](#fig:mapzDecades1000sites-det) provides a more complete
 spatial dynamic characterization for transfers of \$15/ton. In the
@@ -132,6 +156,11 @@ the first 15 years. Appendix
 [A](#sec:appendixA) shows how much this process slows down for
 higher choices of the adjustment cost.
 
+<br>
+
+
+```{admonition} Table
+:class: hint
 ```{table}  Present-value decomposition - 78 sites
 :name: tab:valueObjectiveDecomposition_78sites_det
 | $P^e$ | b  | agricultural  output value | net  transfers | forest services | adjustment Costs | planner value |
@@ -144,12 +173,19 @@ higher choices of the adjustment cost.
 | 32.1  | 25 | 0.17                       | 3.54           | 1.00            | 0.26             | 4.45          |
 ```
 
+<br>
+
+<br>
 
 (fig:mapzDecades1000sites-det)=
 <img src="../aux_input/map_zDecades_1043Sites_pe22.6_det.png" alt="fishy" class="bg-primary" width="800px">
 
 <span style="padding-left: 220px;">Fig 8: Agricultural area evolution over
 time.
+
+<br>
+
+<br>
 
 Our computations with parameter uncertainty and agricultural price
 stochasticity use a coarser grid with 78 sites. Before exploring those
