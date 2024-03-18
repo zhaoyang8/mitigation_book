@@ -25,14 +25,19 @@ a significant amount of greenhouse gases in the next 30 years. Our analysis
 pinpoints tropical forest management as an important contributor to climate
 change mitigation.
 
-
+<!-- 
 ```{image} biome.png
 :alt: fishy
 :class: bg-primary mb-1
 :width: 700px
 :align: center
-```
+``` -->
 
+```{figure} movie_1043site.gif
+:name: evolution-gif
+
+Evolution of the land allocation for Brazilian Amazon until Year 2050
+```
 
 <!-- 1. [Introduction]()
     - [Background](introduction/background.ipynb)
