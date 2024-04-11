@@ -47,3 +47,4 @@ chapters:
 - file: conclusion/conclusion.md
 - file: reference.md
 - file: appendix/appendix.md
+- file: test.ipynb
