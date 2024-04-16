@@ -1,12 +1,5 @@
 #!/bin/bash
 
-# Define parameters directly
-sitenum=78
-xi=2.0
-pf=16.5
-pa=42.03
-timehzn=200
-weight=0.25
 
 # Define names and paths
 action_name="build_book"

@@ -1,3 +1,6 @@
 ## build html files
 docs/_build/
 docs/data/
+
+bash/
+job-outs/
