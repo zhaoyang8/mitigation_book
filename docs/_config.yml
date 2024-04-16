@@ -10,7 +10,7 @@ only_build_toc_files        : true # Disable building files that aren’t in the
 execute:
   execute_notebooks         : 'auto'
   exclude_patterns          : ['notebook.md']
-
+  timeout: -1
 #######################################################################################
 # LaTeX-specific settings
 # Define the name of the latex output file for PDF builds
