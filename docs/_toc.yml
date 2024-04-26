@@ -41,10 +41,9 @@ chapters:
 - file: results/results.md
   sections:
     - file: results/shadow_price.md
-    - file: results/Deterministic.md
-    - file: results/HMC.md
-    - file: results/MPC.md
+    - file: results/Deterministic.ipynb
+    - file: results/HMC.ipynb
+    - file: results/MPC.ipynb
 - file: conclusion/conclusion.md
 - file: reference.md
 - file: appendix/appendix.md
-- file: test.ipynb

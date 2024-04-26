@@ -62,9 +62,9 @@ Evolution of the land allocation for Brazilian Amazon until Year 2050
     - [Solution with price stochasticity under ambiguity neutrality](solution/price.md)
 7. [Results](results/results.md) 
     - [Shadow prices under business-as-usual](results/shadow_price.md)
-    - [Results for case without stochasticity or ambiguity aversion](results/Deterministic.md)
-    - [Results with robustness to parameter uncertainty](results/HMC.md)
-    - [Results with stochastic variation in agricultural prices](results/MPC.md)
+    - [Results for case without stochasticity or ambiguity aversion](results/Deterministic.ipynb)
+    - [Results with robustness to parameter uncertainty](results/HMC.ipynb)
+    - [Results with stochastic variation in agricultural prices](results/MPC.ipynb)
 8. [Conclusions](conclusion/conclusion.md)
 
 
