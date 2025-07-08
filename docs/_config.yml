@@ -1,7 +1,7 @@
 #######################################################################################
 # Book settings
-title                       : Amazon project
-author                      : Juliano J Assunção, Lars Peter Hansen, Todd Munson and José A Scheinkman
+title                       : mitigation project
+author                      : Michael Barnett, William Brock, Lars Peter Hansen, and Hong Zhang
 logo                        : mfr.png
 only_build_toc_files        : true # Disable building files that aren’t in the Table of Contents
 
@@ -10,6 +10,8 @@ only_build_toc_files        : true # Disable building files that aren’t in the
 execute:
   execute_notebooks         : 'auto'
   exclude_patterns          : ['notebook.md']
+  exclude_tags:
+    - 'no-execute'
   timeout: -1
 #######################################################################################
 # LaTeX-specific settings
@@ -18,23 +20,23 @@ latex:
   latex_documents:
     targetname              : book.tex
 
-bibtex_bibfiles: Amazon.bib
+bibtex_bibfiles:
+  - climate.bib
 
 #######################################################################################
 # HTML-specific settings
 html:
   favicon: mfr.png
-  home_page_in_navbar       : true
+  home_page_in_navbar       : false
   use_edit_page_button      : true
   use_repository_button     : true
   use_issues_button         : true
-  # baseurl                   : https://threathunterplaybook.com/
   announcement              : "" # A banner announcement at the top of the site.
 
 #######################################################################################
 # Launch button settings
 repository:
-  url                       : https://github.com/lphansen/Amazon
+  url                       : https://github.com/zhaoyang8/mitigation
   path_to_book              : docs
   branch                    : live
 
@@ -69,6 +71,5 @@ sphinx:
     html_js_files:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-    html_extra_path: ['aux_input']
     bibtex_reference_style: author_year
     bibtex_default_style: plain

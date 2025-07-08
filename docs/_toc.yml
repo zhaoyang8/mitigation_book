@@ -3,47 +3,13 @@
 
 format: jb-book
 root: intro
+parts:
+  - caption: Uncertainty, Social Valuation, and Climate Change Policy
+    numbered: true
+    chapters:
+    - file: notebooks/01_HJB.ipynb
+    # - file: notebooks/02_distorted_climate.ipynb
+    # - file: notebooks/03_stochastic_simulation.ipynb
+    # - file: notebooks/04_value_decomposition.ipynb
+    # - file: notebooks/05_real_options.ipynb
 
-
-
-# parts:
-#   - caption: Introduction
-#     chapters:
-#     - file: introduction/background.ipynb
-#     - file: introduction/literature.ipynb
-#   - caption: Model
-#     chapters:
-#     - file: model/model.ipynb
-#   - caption: Uncertainty
-#     chapters:
-#     - file: uncertainty/uncertainty.ipynb
-#   - caption: Calibration
-#     chapters:
-#     - file: calibration/calibration.ipynb
-#   - caption: Results
-#     chapters:
-#     - file: results/Deterministic.ipynb
-#     - file: results/HMC.ipynb
-#     - file: results/MPC.ipynb
-
-
-chapters:
-- file: introduction/introduction.md
-- file: literature/literature.md
-- file: model/model.md
-- file: uncertainty/uncertainty.md
-- file: calibration/calibration.md
-- file: solution/solution.md
-  sections:
-    - file: solution/neutrality.md
-    - file: solution/parameter.md
-    - file: solution/price.md
-- file: results/results.md
-  sections:
-    - file: results/shadow_price.md
-    - file: results/Deterministic.ipynb
-    - file: results/HMC.ipynb
-    - file: results/MPC.ipynb
-- file: conclusion/conclusion.md
-- file: reference.md
-- file: appendix/appendix.md

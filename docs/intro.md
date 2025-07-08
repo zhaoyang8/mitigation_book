@@ -1,70 +1,22 @@
-
-
-
-
-
-# Carbon prices and forest preservation over space and time in the Brazilian Amazon
-Juliano J Assunção, Lars Peter Hansen, Todd Munson and José A Scheinkman
+# Uncertainty, Social Valuation, and Climate Change Policy
+Michael Barnett, William Brock, Lars Peter Hansen, and Hong Zhang
 <hr style="height:4px; background-color:black; border:none;">
 
 <br>
 
-This website provides a series of online texts for *Carbon prices and forest preservation over space and time in the Brazilian Amazon* by Juliano J Assunção, Lars Peter Hansen, Todd Munson and José A Scheinkman. 
+## Overview
+This notebook provides a detailed explanation and implementation of the code used to solve the models presented in the paper *Uncertainty, Social Valuation, and Climate Change Policy* by Michael Barnett, William Brock, Lars Peter Hansen, and Hong Zhang. 
 <br>
 <br>
-The paper can be found <a href = "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4414217">here</a>.
+The latest version of the paper can be found <a href = "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4872679">here</a>.
 
-
-## Abstract
-Deforestation for cattle ranching in the Brazilian Amazon emits carbon,
-and reforestation absorbs carbon. The social productivities for these alternative activities vary across locations. We analyze a spatial/dynamic model of
-efficient land allocation to establish a benchmark for policies. We treat cattle
-prices as stochastic and location-specific productivities as uncertain when assessing the consequences of imposing alternative prices of carbon emissions.
-Modest price increases would incentivize Brazil to choose policies that capture
-a significant amount of greenhouse gases in the next 30 years. Our analysis
-pinpoints tropical forest management as an important contributor to climate
-change mitigation.
-
-<!-- 
-```{image} biome.png
-:alt: fishy
-:class: bg-primary mb-1
-:width: 700px
-:align: center
-``` -->
-
-```{figure} movie_1043site.gif
-:name: evolution-gif
-
-Evolution of the land allocation for Brazilian Amazon until Year 2050
-```
-
-<!-- 1. [Introduction]()
-    - [Background](introduction/background.ipynb)
-    - [Related Substantive Literature](introduction/literature.ipynb)
-2. [Model](model/model.ipynb)
-3. [Parameter uncertainty](uncertainty/uncertainty.ipynb)
-4. [Productivity measurement](calibration/calibration.ipynb)
-5. [Results]() 
-    - [without stochasticity or ambiguity aversion](results/Deterministic.ipynb)
-    - [with robustness to parameter uncertainty](results/HMC.ipynb)
-    - [with stochastic variation in agricultural prices](results/MPC.ipynb) -->
 
 ## Table of contents
-1. [Introduction](introduction/introduction.md)
-2. [Related Substantive Literature](literature/literature.md)
-3. [Model](model/model.md)
-4. [Parameter uncertainty](uncertainty/uncertainty.md)
-5. [Productivity measurement](calibration/calibration.md)
-6. [Solving the maximization problem](solution/solution.md)
-    - [Solution with parameter ambiguity neutrality](solution/neutrality.md)
-    - [Solution with parameter ambiguity aversion](solution/parameter.md)
-    - [Solution with price stochasticity under ambiguity neutrality](solution/price.md)
-7. [Results](results/results.md) 
-    - [Shadow prices under business-as-usual](results/shadow_price.md)
-    - [Results for case without stochasticity or ambiguity aversion](results/Deterministic.ipynb)
-    - [Results with robustness to parameter uncertainty](results/HMC.ipynb)
-    - [Results with stochastic variation in agricultural prices](results/MPC.ipynb)
-8. [Conclusions](conclusion/conclusion.md)
+1. [Economic model and HJB equations](notebooks/01_HJB.ipynb)
+2. [Distorted climate model](notebooks/02_distorted_climate.ipynb)
+3. [Stochastic simulation](notebooks/03_stochastic_simulation.ipynb)
+4. [Value decomposition](notebooks/04_value_decomposition.ipynb)
+4. [Real options application](notebooks/05_real_options.ipynb)
+
 
 
