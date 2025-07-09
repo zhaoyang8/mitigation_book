@@ -1,0 +1,1324 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Economic model and HJB equations &#8212; mitigation project</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/tabs.js?v=3ee01567"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/01_HJB';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="icon" href="../_static/mfr.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Uncertainty, Social Valuation, and Climate Change Policy" href="../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/mfr.png" class="logo__image only-light" alt="mitigation project - Home"/>
+    <script>document.write(`<img src="../_static/mfr.png" class="logo__image only-dark" alt="mitigation project - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Uncertainty, Social Valuation, and Climate Change Policy</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Economic model and HJB equations</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/zhaoyang8/mitigation_book/live?urlpath=tree/docs/notebooks/01_HJB.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/zhaoyang8/mitigation_book/blob/live/docs/notebooks/01_HJB.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/zhaoyang8/mitigation_book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/zhaoyang8/mitigation_book/edit/live/docs/notebooks/01_HJB.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/zhaoyang8/mitigation_book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/01_HJB.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/01_HJB.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Economic model and HJB equations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-specification">1.1. Model specification <a id="model-spec"></a></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#state-variables">1.1.1. State variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#damage-function">1.1.2. Damage function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#controls">1.1.3. Controls</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#misspecifications">1.1.4. Misspecifications</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltonjacobibellman-equations">1.2. Hamilton–Jacobi–Bellman Equations <a id="hjb"></a></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#post-tech-post-damage">1.2.1. Post-Tech, Post-Damage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#post-tech-pre-damage">1.2.2. Post-Tech, Pre-Damage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-tech-post-damage">1.2.3. Pre-Tech, Post-Damage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-tech-pre-damage">1.2.4. Pre-Tech, Pre-Damage</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-method">1.3. Computational method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#policy-iteration">1.3.1. Policy iteration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-rules-for-phi-and-gamma-at-policy-improvement-steps">1.3.2. Updating rules for <span class="math notranslate nohighlight">\(\Phi\)</span> and <span class="math notranslate nohighlight">\(\Gamma\)</span> at policy-improvement steps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-linear-pde-at-the-policy-evaluation-step">1.3.3. Solving the linear PDE at the policy-evaluation step</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-difference-scheme">1.3.4. Finite-difference scheme</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">1.4. Solution</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="economic-model-and-hjb-equations">
+<h1><span class="section-number">1. </span>Economic model and HJB equations<a class="headerlink" href="#economic-model-and-hjb-equations" title="Link to this heading">#</a></h1>
+<section id="model-specification">
+<h2><span class="section-number">1.1. </span>Model specification <a id="model-spec"></a><a class="headerlink" href="#model-specification" title="Link to this heading">#</a></h2>
+<section id="state-variables">
+<h3><span class="section-number">1.1.1. </span>State variables<a class="headerlink" href="#state-variables" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Symbol</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Stochastic Differential Equation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\hat{k}_t = \log(K_t)\)</span></p></td>
+<td><p>Productive capital</p></td>
+<td><p><span class="math notranslate nohighlight">\(\displaystyle dK_t = K_t\Big[ -\mu_k + \frac{I^k_t}{K_t} - \frac{\kappa}{2}\Big(\frac{I^k_t}{K_t}\Big)^2 \Big]\,dt + K_t\,\sigma_k\,dW_t\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(Y_t\)</span></p></td>
+<td><p>Temperature anomaly</p></td>
+<td><p><span class="math notranslate nohighlight">\(\displaystyle dY_t = \mathcal{E}_t\big[\bar{\theta}\,dt + \varsigma\,dW_t\big]\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\hat{r}_t = \log(R_t)\)</span></p></td>
+<td><p>R&amp;D capital</p></td>
+<td><p><span class="math notranslate nohighlight">\(\displaystyle dR_t = -\zeta R_t\,dt + \psi_0(I^r_t)^{\psi_1}(R_t)^{1-\psi_1}\,dt + R_t\,\sigma_r\,dW_t\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><span class="math notranslate nohighlight">\(W_t\)</span> is a standard Brownian motion.</p>
+</section>
+<section id="damage-function">
+<h3><span class="section-number">1.1.2. </span>Damage function<a class="headerlink" href="#damage-function" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{d \hat{n}}{dy} =
+\begin{cases}
+\lambda_1 + \lambda_2 y, &amp; \text{if } y \le \hat{y} \\
+\lambda_1 + \lambda_2 \left( y - \hat{y} + \overline{y} \right) + \lambda_3(\ell)(y - \hat{y}), &amp; \text{if } y &gt; \hat{y}
+\end{cases}
+\end{split}\]</div>
+<p>By integration, we get</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{n}(y) = 
+\begin{cases}
+\lambda_1 y + \dfrac{\lambda_2}{2} y^2, &amp; \text{if } 0 \le y \le \hat{y} \\
+\lambda_1 y + \dfrac{\lambda_2}{2} \hat{y}^2 + 
+\dfrac{\lambda_2}{2} (y - \hat{y} + \overline{y})^2 + 
+\dfrac{\lambda_3(\ell)}{2} (y - \hat{y})^2 - 
+\dfrac{\lambda_2}{2} \overline{y}^2, &amp; \text{if } y \ge \hat{y}
+\end{cases}
+\end{split}\]</div>
+<iframe
+  id="plotly-div"
+  src="../_static/damage_interactive.html"
+  width="100%"
+  height="470"
+  style="border:none;"
+></iframe><div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --------------------------  Figure 2 of the paper (20 types of damage jump)  --------------------------</span>
+<span class="o">!</span>pip<span class="w"> </span>-q<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>matplotlib
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_damage</span><span class="p">():</span>
+    <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+    <span class="n">y_underline</span> <span class="o">=</span> <span class="mf">1.5</span>
+    <span class="n">y_overline</span> <span class="o">=</span> <span class="mf">2.5</span>
+
+    <span class="n">gamma_1</span> <span class="o">=</span> <span class="mf">0.00017675</span>
+    <span class="n">gamma_2</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mf">0.0022</span>    
+    <span class="n">gamma_3_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+
+    <span class="n">y_limits</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.75</span><span class="p">,</span> <span class="mf">2.25</span><span class="p">]</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">]</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">y_data</span><span class="p">(</span><span class="n">y_limit</span><span class="p">):</span>
+        <span class="n">LHS_ylimit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1000</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
+        
+        <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+        <span class="k">for</span> <span class="n">gamma_3</span> <span class="ow">in</span> <span class="n">gamma_3_list</span><span class="p">:</span>
+            <span class="n">LHS_ylimitlower</span> <span class="o">=</span> <span class="n">gamma_1</span> <span class="o">*</span> <span class="n">Y</span> <span class="o">+</span> <span class="n">gamma_2</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="n">Y</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># y&lt;y_limit</span>
+            <span class="n">LHS_ylimitupper</span> <span class="o">=</span> <span class="n">gamma_1</span> <span class="o">*</span> <span class="n">Y</span> <span class="o">+</span> <span class="n">gamma_2</span><span class="o">*</span><span class="n">y_overline</span> <span class="o">*</span> \
+                <span class="p">(</span><span class="n">Y</span><span class="o">-</span><span class="n">y_limit</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">gamma_2</span><span class="o">+</span><span class="n">gamma_3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> \
+                <span class="p">(</span><span class="n">Y</span><span class="o">-</span><span class="n">y_limit</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">gamma_2</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="n">y_limit</span><span class="o">**</span><span class="mi">2</span>
+        
+            <span class="n">LHS_ylimit</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span><span class="n">LHS_ylimitlower</span><span class="o">*</span><span class="p">(</span><span class="n">Y</span><span class="o">&lt;</span><span class="n">y_limit</span><span class="p">)</span> <span class="o">+</span> <span class="n">LHS_ylimitupper</span><span class="o">*</span><span class="p">(</span><span class="n">Y</span><span class="o">&gt;</span><span class="n">y_limit</span><span class="p">)</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="n">LHS_ylimit</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">y_limit</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">y_limits</span><span class="p">,</span> <span class="n">colors</span><span class="p">):</span>
+        <span class="n">damages</span> <span class="o">=</span> <span class="n">y_data</span><span class="p">(</span><span class="n">y_limit</span><span class="p">)</span>
+        <span class="n">damage_upper</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">damages</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">damage_lower</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">damages</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">mean_damage</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">damages</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">damage_lower</span><span class="p">,</span> <span class="n">damage_upper</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">mean_damage</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">y_limit</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;temperature anomaly (°C)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;proportional reduction in consumption&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Example usage:</span>
+<span class="n">plot_damage</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c741a65a23766ab59b128562fcf0a6c60392cc1586663402bf5c882bc0350b7e.png" src="../_images/c741a65a23766ab59b128562fcf0a6c60392cc1586663402bf5c882bc0350b7e.png" />
+</div>
+</details>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --------------------------  Figure 9 of the paper (1 type of damage jump)  --------------------------</span>
+<span class="o">!</span>pip<span class="w"> </span>-q<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>matplotlib
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_damage_weighted</span><span class="p">():</span>
+    <span class="c1"># Define the temperature anomaly range</span>
+    <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+    <span class="c1"># Damage function parameters</span>
+    <span class="n">gamma_1</span> <span class="o">=</span> <span class="mf">0.00017675</span>
+    <span class="n">gamma_2</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mf">0.0022</span>
+    <span class="c1"># 20 values of gamma_3 evenly spaced from 0 to 1/3</span>
+    <span class="n">gamma_3_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+
+    <span class="n">g_damages_baseline</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+
+
+    <span class="c1"># Piecewise function to calculate the log damage for each gamma_3:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">y_data</span><span class="p">(</span><span class="n">y_jump</span><span class="p">,</span> <span class="n">y_overline</span><span class="p">):</span>
+        <span class="c1"># Create an array to hold damage values for each gamma_3</span>
+        <span class="n">LHS_yjump</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">Y</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">gamma_3_list</span><span class="p">)))</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">gamma_3</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gamma_3_list</span><span class="p">):</span>
+            <span class="c1"># For temperatures below y_jump</span>
+            <span class="n">LHS_yjump_lower</span> <span class="o">=</span> <span class="n">gamma_1</span> <span class="o">*</span> <span class="n">Y</span> <span class="o">+</span> <span class="p">(</span><span class="n">gamma_2</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">Y</span><span class="o">**</span><span class="mi">2</span>
+            <span class="c1"># For temperatures above y_jump</span>
+            <span class="n">LHS_yjump_upper</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">gamma_1</span> <span class="o">*</span> <span class="n">Y</span>
+                <span class="o">+</span> <span class="n">gamma_2</span> <span class="o">*</span> <span class="n">y_overline</span> <span class="o">*</span> <span class="p">(</span><span class="n">Y</span> <span class="o">-</span> <span class="n">y_jump</span><span class="p">)</span>
+                <span class="o">+</span> <span class="p">(</span><span class="n">gamma_2</span> <span class="o">+</span> <span class="n">gamma_3</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.</span> <span class="o">*</span> <span class="p">(</span><span class="n">Y</span> <span class="o">-</span> <span class="n">y_jump</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+                <span class="o">+</span> <span class="n">gamma_2</span> <span class="o">/</span> <span class="mf">2.</span> <span class="o">*</span> <span class="n">y_jump</span><span class="o">**</span><span class="mi">2</span>
+            <span class="p">)</span>
+            <span class="c1"># Use lower function for Y &lt; y_jump, upper for Y &gt;= y_jump</span>
+            <span class="n">LHS_yjump</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">Y</span> <span class="o">&lt;</span> <span class="n">y_jump</span><span class="p">,</span> <span class="n">LHS_yjump_lower</span><span class="p">,</span> <span class="n">LHS_yjump_upper</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">LHS_yjump</span>
+
+    <span class="c1"># Example parameter choice</span>
+    <span class="n">y_jump</span><span class="p">,</span> <span class="n">y_overline</span> <span class="o">=</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">2.5</span>
+
+    <span class="c1"># Calculate the log damages across all gamma_3</span>
+    <span class="c1"># shape: (len(Y), 20)</span>
+    <span class="n">log_damages</span> <span class="o">=</span> <span class="n">y_data</span><span class="p">(</span><span class="n">y_jump</span><span class="p">,</span> <span class="n">y_overline</span><span class="p">)</span>
+
+    <span class="c1"># Helper to compute weighted average log damages and exponentiate:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">weighted_exp_damage</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">log_damages_array</span><span class="p">):</span>
+        <span class="c1"># We do: weighted avg = sum_i( w_i * log_damage_i ) / sum_i( w_i )</span>
+        <span class="n">weighted_avg_log</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">log_damages_array</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">weighted_avg_log</span><span class="p">)</span>
+
+    <span class="c1"># Compute the proportional reduction for each weight set</span>
+    <span class="n">exp_damage_baseline</span>    <span class="o">=</span> <span class="n">weighted_exp_damage</span><span class="p">(</span><span class="n">g_damages_baseline</span><span class="p">,</span> <span class="n">log_damages</span><span class="p">)</span>
+
+
+    <span class="c1"># --- Plotting ---</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">exp_damage_baseline</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;temperature anomaly (°C)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;proportional reduction in consumption&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">0.78</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Example usage:</span>
+<span class="n">plot_damage_weighted</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/29411762f80e1e9949664e032ee4f453e9c982604ad7905f533a70a5473a78bb.png" src="../_images/29411762f80e1e9949664e032ee4f453e9c982604ad7905f533a70a5473a78bb.png" />
+</div>
+</details>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathcal{J}^n(y) = 
+\begin{cases}
+0, &amp; \text{if } 0 \le y \le \underline{y} \\
+\mathsf{r}_0 \exp\left[ 
+\frac{\mathsf{r}_1}{2} (y - \underline{y})^2 + 
+\frac{\mathsf{r}_2}{2} (y - \overline{y})^{-2}
+\right] - 
+\mathsf{r}_0 \exp\left[ 
+\frac{\mathsf{r}_2}{2} (\underline{y} - \overline{y})^{-2}
+\right], &amp; \text{if } \underline{y} &lt; y &lt; \overline{y}
+\end{cases}
+\end{split}\]</div>
+<iframe
+  id="plotly-div"
+  src="../_static/intensity_interactive.html"
+  width="100%"
+  height="420"
+  style="border:none;"
+></iframe>
+</section>
+<section id="controls">
+<h3><span class="section-number">1.1.3. </span>Controls<a class="headerlink" href="#controls" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Symbol</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(I^k_t\)</span></p></td>
+<td><p>Investment in productive capital</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(I^r_t\)</span></p></td>
+<td><p>Investment in R&amp;D</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\mathcal{E}_t\)</span></p></td>
+<td><p>Emission</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="misspecifications">
+<h3><span class="section-number">1.1.4. </span>Misspecifications<a class="headerlink" href="#misspecifications" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Symbol</p></th>
+<th class="head"><p>Channel</p></th>
+<th class="head"><p>Interpretation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(h_k\)</span></p></td>
+<td><p>Capital</p></td>
+<td><p>Brownian motion misspecification of <span class="math notranslate nohighlight">\(K_t\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(h_y\)</span></p></td>
+<td><p>Climate</p></td>
+<td><p>Brownian motion misspecification of <span class="math notranslate nohighlight">\(Y_t\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(h_r\)</span></p></td>
+<td><p>Knowledge</p></td>
+<td><p>Brownian motion misspecification of <span class="math notranslate nohighlight">\(R_t\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(f\)</span></p></td>
+<td><p>Damage jump</p></td>
+<td><p>Jump misspecification of damage‑jump arrival</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(g\)</span></p></td>
+<td><p>Tech jump</p></td>
+<td><p>Jump misspecification of technology‑jump arrival</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Robustness is governed by <span class="math notranslate nohighlight">\(\{\xi_k, \xi_c, \xi_r, \xi_d, \xi_g\}\)</span> — one for each uncertainty channel.</p>
+</section>
+</section>
+<section id="hamiltonjacobibellman-equations">
+<h2><span class="section-number">1.2. </span>Hamilton–Jacobi–Bellman Equations <a id="hjb"></a><a class="headerlink" href="#hamiltonjacobibellman-equations" title="Link to this heading">#</a></h2>
+<p>We distinguish four regimes:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Case</p></th>
+<th class="head"><p>Jump History</p></th>
+<th class="head"><p>State Vector (x)</p></th>
+<th class="head"><p>Controls</p></th>
+<th class="head"><p>Misspecification</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>(i) Post-Tech, Post-Damage</p></td>
+<td><p>tech ✓, damage ✓</p></td>
+<td><p><span class="math notranslate nohighlight">\(\{\hat{k}\}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\{i_k\}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\{h_k\}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>(ii) Post-Tech, Pre-Damage</p></td>
+<td><p>tech ✓, damage ✗</p></td>
+<td><p><span class="math notranslate nohighlight">\(\{\hat{k}\}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\{i_k\}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\{h_k\}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>(iii) Pre-Tech, Post-Damage</p></td>
+<td><p>tech ✗, damage ✓</p></td>
+<td><p><span class="math notranslate nohighlight">\(\{\hat{k},\, y,\, \hat{r}\}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\{i_k,\, i_r,\, e\}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\{h_k,\, h_y,\, h_r,\, g\}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>(iv) Pre-Tech, Pre-Damage</p></td>
+<td><p>tech ✗, damage ✗</p></td>
+<td><p><span class="math notranslate nohighlight">\(\{\hat{k},\, y,\, \hat{r}\}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\{i_k,\, i_r,\, e\}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\{h_k,\, h_y,\, h_r,\, g,\, f\}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Define</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+    z &amp;\overset{\mathrm{def}}{=} y - {\hat y} + {\bar y}\\
+   m(z) &amp;\overset{\mathrm{def}}{=} {\hat n}(y) - (\lambda_1{\hat y}+ \frac 1 2 \lambda_2 {\hat y} ^2)\\
+   W^{\ell,L}(\hat{k},z,\hat{r}) &amp;\overset{\mathrm{def}}{=} V^{\ell,L}(\hat{k},y,\hat{r}) + (\lambda_1{\hat y}+ \frac 1 2 \lambda_2 {\hat y} ^2)
+\end{align*}
+\end{split}\]</div>
+<p>then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+   m(z) &amp;= \lambda_1(y - \hat{y})+{\frac 1 2}\lambda_2 (y - {\hat y} + {\bar y} )^2 + {\frac 1 2}\lambda_3(\ell) (y- \hat y)^2 - {\frac 1 2}\lambda_2(\bar y)^2\\
+   &amp;= \lambda_1(z-\bar y) +{\frac 1 2}\lambda_2z^2+{\frac 1 2}\lambda_3(\ell)(z-\bar y)^2- {\frac 1 2}\lambda_2(\bar y)^2
+\end{align*}
+\end{split}\]</div>
+<section id="post-tech-post-damage">
+<h3><span class="section-number">1.2.1. </span>Post-Tech, Post-Damage<a class="headerlink" href="#post-tech-post-damage" title="Link to this heading">#</a></h3>
+<p>We can get <span class="math notranslate nohighlight">\(W^{\ell,L}(\hat{k},z,\hat{r})\)</span> from</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+0 &amp;= \max_{i^k}\,\min_{h_k}\,
+    \left[\,
+      \delta\log\bigl(\alpha k - i^{k}\bigr)
+      - \delta W^{\ell,L}(\hat{k},z,\hat{r})
+      - \delta m(z)
+    \right] \\
+  &amp;\quad
+    + \frac{\partial W^{\ell,L}}{\partial \hat{k}}(\hat{k},z,\hat{r})
+      \left(
+        -\mu_{k}
+        + \frac{i^{k}}{k}
+        - \frac{\kappa}{2}\!\Bigl(\frac{i^{k}}{k}\Bigr)^{2}
+        - \frac{|\sigma_{k}|^{2}}{2}
+        + \sigma_k\,h_k
+      \right) 
+    + \frac{\partial^2 W^{\ell,L}}{\partial \hat{k}^2}(\hat{k},z,\hat{r})
+      \,\frac{|\sigma_{k}|^{2}}{2}\\
+  &amp;\quad
+    + \frac{\xi_k}{2}\,h_k^2.
+\end{align*}
+\end{split}\]</div>
+</section>
+<section id="post-tech-pre-damage">
+<h3><span class="section-number">1.2.2. </span>Post-Tech, Pre-Damage<a class="headerlink" href="#post-tech-pre-damage" title="Link to this heading">#</a></h3>
+<p>We can get <span class="math notranslate nohighlight">\(V^{L}(\hat{k},y,\hat{r})\)</span> from</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+0 &amp;= \max_{i^k}\,\min_{h_k}\,
+    \left[
+      \delta \log\!\bigl(\alpha k - i^{k}\bigr)
+      - \delta V^{L}(\hat{k},y,\hat{r})
+      - \delta \hat n(y)
+    \right] \\[6pt]
+  &amp;\quad
+    + \frac{\partial V^{L}}{\partial \hat{k}}(\hat{k},y,\hat{r})
+      \left(
+        -\mu_{k}
+        + \frac{i^{k}}{k}
+        - \frac{\kappa}{2}\!\Bigl(\frac{i^{k}}{k}\Bigr)^{2}
+        - \frac{|\sigma_{k}|^{2}}{2}
+        + \sigma_k\,h_k
+      \right) 
+    + \frac{\partial^2 V^{L}}
+           {\partial \hat{k}\,\partial \hat{k}'}
+      (\hat{k},y,\hat{r})
+      \,\frac{|\sigma_{k}|^{2}}{2}\\[6pt]
+  &amp;\quad
+    + \frac{\xi_k}{2}\,h_k^2.
+\end{align*}
+\end{split}\]</div>
+</section>
+<section id="pre-tech-post-damage">
+<h3><span class="section-number">1.2.3. </span>Pre-Tech, Post-Damage<a class="headerlink" href="#pre-tech-post-damage" title="Link to this heading">#</a></h3>
+<p>From Post-Post we know <span class="math notranslate nohighlight">\(W^{\ell,L}(\hat{k},z,\hat{r})\)</span>, then we can get <span class="math notranslate nohighlight">\(W^{\ell}(\hat{k},z,\hat{r})\)</span> from</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+0 &amp;= \max_{i^k,\,i^r,\,e}\;\min_{h,\,g^{L}}\;
+    \Bigl[
+      \delta \log\!\bigl(\alpha k - i^{k} - i^{r}
+        - \alpha k\,\phi_0\,(1 - \frac{e}{\beta \alpha k})^{\phi_1}
+      \bigr)
+      - \delta W^{\ell}(\hat{k},z,\hat{r})
+      - \delta m(z)
+    \Bigr] \\[6pt]
+  &amp;\quad
+    + \frac{\partial W^{\ell}}{\partial \hat{k}}(\hat{k},z,\hat{r})
+      \Bigl(
+        -\mu_{k}
+        + \frac{i^{k}}{k}
+        - \frac{\kappa}{2}\!\bigl(\frac{i^{k}}{k}\bigr)^{2}
+        - \frac{|\sigma_{k}|^{2}}{2}
+        + \sigma_{k}\,h
+      \Bigr)
+    + \frac{\partial^2 W^{\ell}}{\partial \hat{k}\,\partial \hat{k}'}(\hat{k},z,\hat{r})
+      \,\frac{|\sigma_{k}|^{2}}{2} \\[6pt]
+  &amp;\quad
+    + \frac{\partial W^{\ell}}{\partial y}(\hat{k},z,\hat{r})
+      \;e\;\bigl(\bar{\theta} + \varsigma\,h\bigr)
+    + \frac{\partial^2 W^{\ell}}{\partial y\,\partial y'}(\hat{k},z,\hat{r})
+      \;\frac{|\varsigma|^{2}}{2}\,e^{2} \\[6pt]
+  &amp;\quad
+    + \frac{\partial W^{\ell}}{\partial \hat{r}}(\hat{k},z,\hat{r})
+      \Bigl(
+        -\zeta
+        + \psi_{0}\,(i^{r})^{\psi_{1}}\,e^{-\psi_{1}\hat{r}}
+        - \frac{|\sigma_{r}|^{2}}{2}
+        + \sigma_{r}\,h
+      \Bigr)
+    + \frac{\partial^2 W^{\ell}}{\partial \hat{r}\,\partial \hat{r}'}(\hat{k},z,\hat{r})
+      \,\frac{|\sigma_{r}|^{2}}{2} \\[6pt]
+  &amp;\quad
+    + \mathcal{J}^{L}\,g^{L}\,
+      \bigl[\,W^{\ell,L}(\hat{k},z,\hat{r}) - W^{\ell}(\hat{k},z,\hat{r})\bigr]
+    + \xi\,\mathcal{J}^{L}\,\bigl[\,1 - g^{L} + g^{L}\log g^{L}\bigr] \\[6pt]
+  &amp;\quad
+    + \frac{\xi}{2}\,h' h
+\end{align*}
+\end{split}\]</div>
+</section>
+<section id="pre-tech-pre-damage">
+<h3><span class="section-number">1.2.4. </span>Pre-Tech, Pre-Damage<a class="headerlink" href="#pre-tech-pre-damage" title="Link to this heading">#</a></h3>
+<p>From Post-Pre we know <span class="math notranslate nohighlight">\(V^{L}(\hat{k},y,\hat{r})\)</span>,
+from Pre-Post we know <span class="math notranslate nohighlight">\(W^{\ell}(\hat{k},z,\hat{r})\)</span>, so when <span class="math notranslate nohighlight">\(y=\hat{y}\)</span>, i.e. <span class="math notranslate nohighlight">\(z = \bar{y}\)</span>, we can get</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+0 &amp;= \max_{i^k,\,i^r,\,e}\;\min_{h,\,g^{\ell}}\;
+    \Bigl[
+      \delta \log\!\bigl(\alpha k - i^k - i^r
+        - \alpha k\,\phi_0\,(1 - \frac{e}{\beta \alpha k})^{\phi_1}
+      \bigr)
+      - \delta V(\hat{k},\hat{y},\hat{r})
+      - \delta \hat n(\hat{y})
+    \Bigr] \\[6pt]
+  &amp;\quad
+    + \frac{\partial V}{\partial \hat{k}}(\hat{k},\hat{y},\hat{r})
+      \Bigl(
+        -\mu_{k}
+        + \frac{i^k}{k}
+        - \frac{\kappa}{2}\!\bigl(\frac{i^k}{k}\bigr)^{2}
+        - \frac{|\sigma_k|^2}{2}
+        + \sigma_k\,h
+      \Bigr)
+    + \frac{\partial^2 V}{\partial \hat{k}\,\partial \hat{k}'}(\hat{k},\hat{y},\hat{r})
+      \,\frac{|\sigma_k|^2}{2} \\[6pt]
+  &amp;\quad
+    + \frac{\partial V}{\partial y}(\hat{k},\hat{y},\hat{r})
+      \;e\;\bigl(\bar{\theta} + \varsigma\,h\bigr)
+    + \frac{\partial^2 V}{\partial y\,\partial y'}(\hat{k},\hat{y},\hat{r})
+      \;\frac{|\varsigma|^2}{2}\,e^2 \\[6pt]
+  &amp;\quad
+    + \frac{\partial V}{\partial \hat{r}}(\hat{k},\hat{y},\hat{r})
+      \Bigl(
+        -\zeta
+        + \psi_{0}\,(i^r)^{\psi_{1}}\,e^{-\psi_{1}\hat{r}}
+        - \frac{|\sigma_r|^2}{2}
+        + \sigma_r\,h
+      \Bigr)
+    + \frac{\partial^2 V}{\partial \hat{r}\,\partial \hat{r}'}(\hat{k},\hat{y},\hat{r})
+      \,\frac{|\sigma_r|^2}{2} \\[6pt]
+  &amp;\quad
+    + \sum_{\ell=1}^{L}\mathcal{J}^{\ell}\,g^{\ell}\,
+      \bigl[V^{\ell}(\hat{k},\hat{y},\hat{r}) - V(\hat{k},\hat{y},\hat{r})\bigr]
+    + \xi \sum_{\ell=1}^{L}\mathcal{J}^{\ell}
+      \bigl[\,1 - g^{\ell} + g^{\ell}\log g^{\ell}\bigr] \\[6pt]
+  &amp;\quad
+    + \frac{\xi}{2}\,h' h
+\end{align*}
+\end{split}\]</div>
+</section>
+</section>
+<section id="computational-method">
+<h2><span class="section-number">1.3. </span>Computational method<a class="headerlink" href="#computational-method" title="Link to this heading">#</a></h2>
+<section id="policy-iteration">
+<h3><span class="section-number">1.3.1. </span>Policy iteration<a class="headerlink" href="#policy-iteration" title="Link to this heading">#</a></h3>
+<p>For simplicity, denote the state space, control set, and distortion set by</p>
+<div class="math notranslate nohighlight">
+\[
+X = \{\log k,\, y,\, \log r\}, \qquad
+\Phi = \{ i^k,\, i^j,\, \mathcal{E}\}, \qquad
+\Gamma = \{ h^k,\, h^y,\, h^r,\, g^\ell\}.
+\]</div>
+<p>The value function <span class="math notranslate nohighlight">\(\hat{v}(X)\)</span> depends on the state <span class="math notranslate nohighlight">\(X\)</span>.</p>
+<p><strong>Input:</strong> initial guess <span class="math notranslate nohighlight">\(\hat{v}^0\)</span>; tolerance <span class="math notranslate nohighlight">\(\epsilon = 10^{-7}\)</span><br />
+<strong>Output:</strong> optimal value function <span class="math notranslate nohighlight">\(\hat{v}^{*}\)</span></p>
+<ol class="arabic simple">
+<li><p><strong>Initialise</strong> <span class="math notranslate nohighlight">\(\hat{v}\leftarrow \hat{v}^0\)</span>.</p></li>
+<li><p><strong>Repeat</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Step 1 (controls).</strong> Compute optimal actions <span class="math notranslate nohighlight">\(\Phi^{*}\)</span> from the maximisation first-order conditions using <span class="math notranslate nohighlight">\((\hat{v},\Phi,\Gamma)\)</span>.</p></li>
+<li><p><strong>Step 2 (distortions).</strong> Compute optimal probability distortions <span class="math notranslate nohighlight">\(\Gamma^{*}\)</span> from the minimisation first-order conditions using <span class="math notranslate nohighlight">\((\hat{v},\Phi^{*},\Gamma)\)</span>.</p></li>
+<li><p><strong>Step 3 (value update).</strong> Obtain a provisional value <span class="math notranslate nohighlight">\(\hat{v}^{\text{new}}\)</span> by solving (conditionally) the HJB PDE with a false-transient method, given <span class="math notranslate nohighlight">\((\hat{v},\Phi^{*},\Gamma^{*})\)</span>.</p></li>
+<li><p><strong>Step 4.</strong> Set <span class="math notranslate nohighlight">\(\hat{v}\leftarrow\hat{v}^{\text{new}},\;\Phi\leftarrow\Phi^{*},\;\Gamma\leftarrow\Gamma^{*}\)</span>.</p></li>
+</ol>
+</li>
+<li><p><strong>Until</strong> <span class="math notranslate nohighlight">\(\lVert \hat{v}^{\text{new}}-\hat{v}\rVert &lt; \epsilon\)</span>.</p></li>
+</ol>
+</section>
+<section id="updating-rules-for-phi-and-gamma-at-policy-improvement-steps">
+<h3><span class="section-number">1.3.2. </span>Updating rules for <span class="math notranslate nohighlight">\(\Phi\)</span> and <span class="math notranslate nohighlight">\(\Gamma\)</span> at policy-improvement steps<a class="headerlink" href="#updating-rules-for-phi-and-gamma-at-policy-improvement-steps" title="Link to this heading">#</a></h3>
+<p>When solving HJB equations we typically face non-linear first-order conditions
+that have no closed-form solution.<br />
+An interior <strong>cobweb</strong> loop is therefore embedded inside Algorithm 1:</p>
+<ol class="arabic simple">
+<li><p>Start from an initial guess for a control variable.</p></li>
+<li><p>Compute the residuals in the first-order condition.</p></li>
+<li><p>Update the control based on the residuals (optionally with relaxation).</p></li>
+<li><p>Repeat until the control converges.</p></li>
+</ol>
+<p>Every probability distortion arising from misspecification aversion <strong>does</strong>
+possess a closed-form expression in terms of <span class="math notranslate nohighlight">\(\hat{v}\)</span> and its derivatives, so
+those quantities are updated directly whenever <span class="math notranslate nohighlight">\(\hat{v}\)</span> is updated.</p>
+</section>
+<section id="solving-the-linear-pde-at-the-policy-evaluation-step">
+<h3><span class="section-number">1.3.3. </span>Solving the linear PDE at the policy-evaluation step<a class="headerlink" href="#solving-the-linear-pde-at-the-policy-evaluation-step" title="Link to this heading">#</a></h3>
+<p>To update the value function we solve a <strong>conditionally linear</strong> PDE implicitly.<br />
+A false-transient time dimension is introduced to stabilise the non-linear HJB;
+implicit time-stepping continues until the artificial time derivative converges
+to zero.<br />
+Sparse linear systems arising at each step are solved with PETSc’s stabilised
+Bi-CG method and an ILU preconditioner.</p>
+<p>The HJB can be written as</p>
+<div class="math notranslate nohighlight">
+\[
+A\,\hat{v}
++ B_{\hat{k}}\,\partial_{\hat{k}}\hat{v}
++ B_{y}\,\partial_{y}\hat{v}
++ B_{\hat{r}}\,\partial_{\hat{r}}\hat{v}
++ C_{\hat{k}}\,\partial_{\hat{k}\hat{k}}\hat{v}
++ C_{y}\,\partial_{yy}\hat{v}
++ C_{\hat{r}}\,\partial_{\hat{r}\hat{r}}\hat{v}
++ D = 0.
+\]</div>
+<p>More compactly, letting <span class="math notranslate nohighlight">\(x\)</span> collect the state variables and <span class="math notranslate nohighlight">\(V\)</span> denote
+<span class="math notranslate nohighlight">\(\hat{v}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+0 = V_t(x) +
+\mathbb{A}(x;V,V_x,V_{xx})\,V +
+\mathbb{B}(x;V,V_x,V_{xx})\,V_x +
+\frac12 \operatorname{tr}\!\bigl[
+  \mathbb{C}(x;V,V_x,V_{xx})\,
+  V_{xx}\,
+  \mathbb{C}(x;V,V_x,V_{xx})
+\bigr]
++ \mathbb{D}(x;V,V_x,V_{xx}).
+\]</div>
+<p>Given an iterate <span class="math notranslate nohighlight">\(V^{0}(x)\)</span> we compute the coefficients and advance via</p>
+<div class="math notranslate nohighlight">
+\[
+V^{\text{new}}(x)=
+V^{0}(x)+
+\Bigl[
+  \mathbb{A}\,V^{0}
+  + \mathbb{B}\,V^{0}_x
+  + \frac12\operatorname{tr}\!\bigl(\mathbb{C}\,V^{0}_{xx}\,\mathbb{C}\bigr)
+  + \mathbb{D}
+\Bigr]\Delta t ,
+\]</div>
+<p>then solve the resulting linear system with Bi-CG-Stab.</p>
+<p>See <a class="reference external" href="https://github.com/korito1416/two-capital-climate-change/blob/new_model_boundary/python/src/PostSolver_new_rho1.py"><strong><code class="docutils literal notranslate"><span class="pre">PostSolver.py</span></code></strong></a> and <a class="reference external" href="https://github.com/korito1416/two-capital-climate-change/blob/new_model_boundary/python/src/PreSolver_CRS2_new_rho1.py"><strong><code class="docutils literal notranslate"><span class="pre">PreSolver.py</span></code></strong></a> for code.</p>
+</section>
+<section id="finite-difference-scheme">
+<h3><span class="section-number">1.3.4. </span>Finite-difference scheme<a class="headerlink" href="#finite-difference-scheme" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>Interior points</strong> — central differences</p>
+<div class="math notranslate nohighlight">
+\[
+    \left(\frac{\partial f}{\partial x}\right)_i
+      = \frac{f_{i+1}-f_{i-1}}{2\Delta x},
+  \qquad
+    \left(\frac{\partial^2 f}{\partial x^2}\right)_i
+      = \frac{f_{i+1}+f_{i-1}-2f_i}{\Delta x^2}.
+  \]</div>
+</li>
+<li><p><strong>Lower boundary</strong> — forward differences</p>
+<div class="math notranslate nohighlight">
+\[
+    \left(\frac{\partial f}{\partial x}\right)_0
+      = \frac{f_{1}-f_{0}}{\Delta x},
+  \qquad
+    \left(\frac{\partial^2 f}{\partial x^2}\right)_0
+      = \frac{f_{2}+f_{0}-2f_{1}}{\Delta x^2}.
+  \]</div>
+</li>
+<li><p><strong>Upper boundary</strong> — backward differences</p>
+<div class="math notranslate nohighlight">
+\[
+    \left(\frac{\partial f}{\partial x}\right)_{N-1}
+      = \frac{f_{N-1}-f_{N-2}}{\Delta x},
+  \qquad
+    \left(\frac{\partial^2 f}{\partial x^2}\right)_{N-1}
+      = \frac{f_{N-1}+f_{N-3}-2f_{N-2}}{\Delta x^2}.
+  \]</div>
+</li>
+</ul>
+<p>See <a class="reference external" href="https://github.com/korito1416/two-capital-climate-change/blob/new_model_boundary/python/src/Utility.py"><strong><code class="docutils literal notranslate"><span class="pre">Utility.py</span></code></strong></a> for code.</p>
+</section>
+</section>
+<section id="solution">
+<h2><span class="section-number">1.4. </span>Solution<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
+<p>Production runs are scripted:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/korito1416/two-capital-climate-change/blob/new_model_boundary/conduction/Postdamage_NewPlug.sh"><strong><code class="docutils literal notranslate"><span class="pre">Postdamage.sh</span></code></strong></a> – solves post‑damage regimes with random initialization</p></li>
+<li><p><a class="reference external" href="https://github.com/korito1416/two-capital-climate-change/blob/new_model_boundary/conduction/Postdamage_sub_NewPlug.sh"><strong><code class="docutils literal notranslate"><span class="pre">Postdamage_sub.sh</span></code></strong></a> – grid‑refinement loop to accelerate convergence</p></li>
+<li><p><a class="reference external" href="https://github.com/korito1416/two-capital-climate-change/blob/new_model_boundary/conduction/Predamage.sh"><strong><code class="docutils literal notranslate"><span class="pre">Predamage.sh</span></code></strong></a> – solves pre‑damage regimes</p></li>
+</ul>
+<style>
+  .btn-group {
+    display: inline-flex;
+    gap: 0.5em;
+    margin-bottom: 1em;
+  }
+  .btn-group button {
+    padding: 0.5em 1em;
+    border: 2px solid #007acc;
+    background: white;
+    color: #007acc;
+    font-size: 1rem;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-group button.active,
+  .btn-group button:hover {
+    background: #007acc;
+    color: white;
+  }
+  .plot-container {
+    margin-top: 1em;
+  }
+</style>
+<div class="btn-group">
+  <button data-target="xik0.05" class="active">More aversion</button>
+  <button data-target="xik0.1">Less aversion</button>
+  <button data-target="xik1e5">Baseline</button>
+</div>
+<div id="plot-xik0.05" class="plot-container">
+  <iframe src="../_static/df_V_m3_surface_xik0.05.html"
+          width="100%" height="470" style="border:none;"></iframe>
+</div>
+<div id="plot-xik0.1" class="plot-container" style="display:none;">
+  <iframe src="../_static/df_V_m3_surface_xik0.1.html"
+          width="100%" height="470" style="border:none;"></iframe>
+</div>
+<div id="plot-xik1e5" class="plot-container" style="display:none;">
+  <iframe src="../_static/df_V_m3_surface_xik1e+05.html"
+          width="100%" height="470" style="border:none;"></iframe>
+</div>
+<script>
+  const buttons = document.querySelectorAll('.btn-group button');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // toggle active class
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      // show the right plot
+      const sel = btn.getAttribute('data-target');
+      ['xik0.05','xik0.1','xik1e5'].forEach(id => {
+        document.getElementById('plot-'+id).style.display =
+          (id === sel ? 'block' : 'none');
+      });
+    });
+  });
+</script>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "zhaoyang8/mitigation_book",
+            ref: "live",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Uncertainty, Social Valuation, and Climate Change Policy</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-specification">1.1. Model specification <a id="model-spec"></a></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#state-variables">1.1.1. State variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#damage-function">1.1.2. Damage function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#controls">1.1.3. Controls</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#misspecifications">1.1.4. Misspecifications</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltonjacobibellman-equations">1.2. Hamilton–Jacobi–Bellman Equations <a id="hjb"></a></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#post-tech-post-damage">1.2.1. Post-Tech, Post-Damage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#post-tech-pre-damage">1.2.2. Post-Tech, Pre-Damage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-tech-post-damage">1.2.3. Pre-Tech, Post-Damage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-tech-pre-damage">1.2.4. Pre-Tech, Pre-Damage</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-method">1.3. Computational method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#policy-iteration">1.3.1. Policy iteration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-rules-for-phi-and-gamma-at-policy-improvement-steps">1.3.2. Updating rules for <span class="math notranslate nohighlight">\(\Phi\)</span> and <span class="math notranslate nohighlight">\(\Gamma\)</span> at policy-improvement steps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-linear-pde-at-the-policy-evaluation-step">1.3.3. Solving the linear PDE at the policy-evaluation step</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-difference-scheme">1.3.4. Finite-difference scheme</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">1.4. Solution</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Michael Barnett, William Brock, Lars Peter Hansen, and Hong Zhang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
