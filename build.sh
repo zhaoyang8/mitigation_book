@@ -10,6 +10,7 @@ source ~/miniconda3/bin/activate jb        # adjust for your install path
 
 # build the book
 jupyter-book build ~/Desktop/two_capital_book/mitigation_book/docs
+touch docs/.nojekyll
 
 # simple timing info
 end=$(date +%s)
