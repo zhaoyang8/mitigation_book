@@ -1,0 +1,32 @@
+/* ------------------------------------------------------------------
+   1) Give the empty <a> itself a bigger font-size so everything
+      it contains (including ::after) scales from that.
+------------------------------------------------------------------ */
+h1 > a.code-link,
+h2 > a.code-link,
+h3 > a.code-link {
+  font-size: 0.9em !important;   /* change 1.2 → 1.4, 1.6, etc. until happy */
+  line-height: 1;                /* keeps it vertically centred */
+}
+
+/* ------------------------------------------------------------------
+   2) The “Code ↗” text that’s injected after the anchor
+------------------------------------------------------------------ */
+h1 > a.code-link::after,
+h2 > a.code-link::after,
+h3 > a.code-link::after {
+  content: "Code ↗";
+  font-weight: 600;
+  margin-left: .4rem;
+  /* No need for font-size here—now inherits from the anchor above */
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------
+   3) Still hide that anchor inside any ToC so the sidebar is clean
+------------------------------------------------------------------ */
+nav.bd-toc a.code-link,
+div.sidebar-scroll a.code-link,
+div.table-of-contents a.code-link {
+  display: none;
+}

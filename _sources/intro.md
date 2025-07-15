@@ -13,7 +13,7 @@ The latest version of the paper can be found <a href = "https://papers.ssrn.com/
 
 ## Table of contents
 1. [Economic model and HJB equations](notebooks/01_HJB.ipynb)
-2. [Distorted climate model](notebooks/02_distorted_climate.ipynb)
+2. [Worst-case distributions](notebooks/02_worstcase_distributions.ipynb)
 3. [Stochastic simulation](notebooks/03_stochastic_simulation.ipynb)
 4. [Value decomposition](notebooks/04_value_decomposition.ipynb)
 4. [Real options application](notebooks/05_real_options.ipynb)
