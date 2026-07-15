@@ -8,8 +8,7 @@ parts:
     numbered: true
     chapters:
     - file: notebooks/01_HJB.ipynb
-    # - file: notebooks/02_distorted_climate.ipynb
-    # - file: notebooks/03_stochastic_simulation.ipynb
-    # - file: notebooks/04_value_decomposition.ipynb
-    # - file: notebooks/05_real_options.ipynb
-
+    - file: notebooks/02_worstcase_distributions.ipynb
+    - file: notebooks/03_stochastic_simulation.ipynb
+    - file: notebooks/04_value_decomposition.ipynb
+    - file: notebooks/05_real_options.ipynb

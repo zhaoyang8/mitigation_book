@@ -1,5 +1,46 @@
-## build html files
-docs/_build/
+.DS_Store
+**/.DS_Store
+
+## Ignore generated Jupyter Book/Sphinx build output.
+_build/
+**/_build/
+docs/_static/locales/
+docs/_static/vendor/
+docs/_static/styles/
+
+## Ignore generated Sphinx/theme assets copied into docs/_static.
+docs/_static/basic.css
+docs/_static/check-solid.svg
+docs/_static/clipboard.min.js
+docs/_static/copy-button.svg
+docs/_static/copybutton.css
+docs/_static/copybutton.js
+docs/_static/copybutton_funcs.js
+docs/_static/design-tabs.js
+docs/_static/doctools.js
+docs/_static/documentation_options.js
+docs/_static/file.png
+docs/_static/images/logo_*
+docs/_static/language_data.js
+docs/_static/minus.png
+docs/_static/mystnb.*.css
+docs/_static/play-solid.svg
+docs/_static/plus.png
+docs/_static/proof.css
+docs/_static/pygments.css
+docs/_static/sbt-webpack-macros.html
+docs/_static/scripts/
+docs/_static/searchtools.js
+docs/_static/sphinx-design.min.css
+docs/_static/sphinx-thebe.css
+docs/_static/sphinx-thebe.js
+docs/_static/sphinx_highlight.js
+docs/_static/tabs.css
+docs/_static/tabs.js
+docs/_static/togglebutton.css
+docs/_static/togglebutton.js
+docs/_static/webpack-macros.html
+
 docs/data/
 
 bash/
