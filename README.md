@@ -115,20 +115,44 @@ Do not commit `.DS_Store` files.
 
 ## Publish To GitHub Pages
 
-The live site is served from the `gh-pages` branch.
-Copy the generated HTML from `main` into `gh-pages`:
+The live site is served from the `gh-pages` branch. When working from
+`rebuildjul26`, publish the generated website by copying `docs/_build/html/`
+into a separate `gh-pages` worktree.
+
+Run this from the repo root:
 
 ```bash
-cd ~/mitigation_book
-rsync -a --delete ../mitigation_book_source/docs/_build/html/ ./
+conda activate jb015
+bash build.sh
 ```
 
-Then commit and push:
+Create a separate worktree for the `gh-pages` branch the first time you publish:
 
 ```bash
+git worktree add -b gh-pages ../mitigation_book-gh-pages origin/gh-pages
+```
+
+On later publishes, reuse the existing worktree instead of creating it again:
+
+```bash
+cd ../mitigation_book-gh-pages
+git pull origin gh-pages
+cd ../mitigation_book
+```
+
+Copy the built HTML into that worktree:
+
+```bash
+rsync -a --delete docs/_build/html/ ../mitigation_book-gh-pages/
+```
+
+Commit and push the published site:
+
+```bash
+cd ../mitigation_book-gh-pages
 git status
 git add -A
-git commit -m "Update documentation"
+git commit -m "Update site from rebuildjul26"
 git push origin gh-pages
 ```
 
