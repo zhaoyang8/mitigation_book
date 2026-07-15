@@ -6,12 +6,6 @@ This repo contains the source code and generated HTML for:
 https://lphansen.github.io/mitigation_book/intro.html
 ```
 
-Current source worktree:
-
-```bash
-~/Documents/MFR_projects/mitigation_book_source
-```
-
 ## Branch Structure
 
 Use two branches:
@@ -59,7 +53,6 @@ This site uses the old Jupyter Book/Sphinx build stack. Use `jupyter-book 0.x`, 
 Create the environment once:
 
 ```bash
-cd ~/Documents/MFR_projects/mitigation_book_source
 conda create -n jb015 python=3.10 -y
 conda activate jb015
 python -m pip install -r docs/requirements.txt
@@ -68,7 +61,6 @@ python -m pip install -r docs/requirements.txt
 ## Build Locally
 
 ```bash
-cd ~/Documents/MFR_projects/mitigation_book_source
 conda activate jb015
 bash build.sh
 ```
@@ -77,18 +69,6 @@ The generated website will be in:
 
 ```text
 docs/_build/html/
-```
-
-Preview locally:
-
-```bash
-python3 -m http.server 8000 -d docs/_build/html
-```
-
-Open:
-
-```text
-http://localhost:8000/intro.html
 ```
 
 ## How To Modify
@@ -125,17 +105,10 @@ Keep it off unless the missing simulation scripts and data are restored. Some no
 After modifying and rebuilding:
 
 ```bash
-cd ~/Documents/MFR_projects/mitigation_book_source
-
 git status
-git add README.md build.sh .gitignore
-git add docs/requirements.txt docs/_config.yml docs/_toc.yml docs/intro.md
-git add docs/reference.md docs/references.bib docs/climate.bib
-git add docs/notebooks docs/_static docs/_build/html
-
-git status
-git commit -m "Update mitigation book source and generated HTML"
-git push origin main
+git add .
+git commit -m "<your updates>"
+git push
 ```
 
 Do not commit `.DS_Store` files.
@@ -143,17 +116,10 @@ Do not commit `.DS_Store` files.
 ## Publish To GitHub Pages
 
 The live site is served from the `gh-pages` branch.
-
-The local `gh-pages` worktree is:
-
-```bash
-~/Documents/MFR_projects/mitigation_book
-```
-
 Copy the generated HTML from `main` into `gh-pages`:
 
 ```bash
-cd ~/Documents/MFR_projects/mitigation_book
+cd ~/mitigation_book
 rsync -a --delete ../mitigation_book_source/docs/_build/html/ ./
 ```
 
