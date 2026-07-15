@@ -8,7 +8,7 @@ Michael Barnett, William Brock, Lars Peter Hansen, and Hong Zhang
 This notebook provides a detailed explanation and implementation of the code used to solve the models presented in the paper *Uncertainty, Social Valuation, and Climate Change Policy* by Michael Barnett, William Brock, Lars Peter Hansen, and Hong Zhang. 
 <br>
 <br>
-The latest version of the paper can be found <a href = "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4872679">here</a>.
+The latest version of the paper can be found <a href = "https://larspeterhansen.org/wp-content/uploads/2026/04/mitigation_4-7.pdf">here</a>.
 
 
 ## Table of contents
