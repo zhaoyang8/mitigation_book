@@ -1,6 +1,6 @@
 .DS_Store
 **/.DS_Store
-
+*.tex
 ## Ignore generated Jupyter Book/Sphinx build output.
 _build/
 **/_build/
@@ -45,3 +45,8 @@ docs/data/
 
 bash/
 job-outs/
+
+**/_build*
+
+__pycache__/
+*.pyc
