@@ -33,6 +33,16 @@ case "$version" in
     ;;
 esac
 
+# Regenerate docs/_static/table/*.md from the paper tex when it is present.
+# The tex lives outside docs/ (so Sphinx never publishes it) and is gitignored;
+# without it, fall back to the committed generated tables so the book still builds.
+if [ -f paper/mitigation_7-4.tex ]; then
+  echo "Syncing tables from paper tex"
+  python tools/sync_tables_from_tex.py
+else
+  echo "Paper tex not found; using committed generated tables."
+fi
+
 (
   cd docs
   "$jb_cmd" clean .
